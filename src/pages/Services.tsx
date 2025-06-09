@@ -12,7 +12,7 @@ const Services = () => {
   const mainServices = [
     {
       id: "strategie",
-      icon: <TrendingUp size={32} />,
+      icon: <TrendingUp size={28} />,
       title: "Stratégie de Communication Digitale",
       description: "Attirez, engagez et transformez votre audience. Boostly construit pour vous une stratégie digitale sur mesure qui maximise votre impact en ligne.",
       image: "/lovable-uploads/3c50c7a3-59fe-4af0-bf6e-dd46018fae92.png",
@@ -27,7 +27,7 @@ const Services = () => {
     },
     {
       id: "community",
-      icon: <Users size={32} />,
+      icon: <Users size={28} />,
       title: "Gestion des Réseaux Sociaux",
       description: "Du contenu qui attire, une communauté qui s'engage. Avec Boostly, vos réseaux deviennent un véritable moteur de croissance pour votre entreprise.",
       image: "/lovable-uploads/344229b4-7320-4c15-a5a5-e442fb7f5ba8.png",
@@ -42,7 +42,7 @@ const Services = () => {
     },
     {
       id: "contenu",
-      icon: <Edit size={32} />,
+      icon: <Edit size={28} />,
       title: "Création de Contenu Impactant",
       description: "Faites parler votre marque. Boostly crée des contenus qui font toute la différence et captivent votre audience cible.",
       image: "/lovable-uploads/fa4d5b40-dc7d-43d5-a8bc-00122ac72cf8.png",
@@ -57,7 +57,7 @@ const Services = () => {
     },
     {
       id: "branding",
-      icon: <Target size={32} />,
+      icon: <Target size={28} />,
       title: "Branding",
       description: "Votre marque, votre histoire, notre expertise. Avec Boostly, construisez une identité qui inspire confiance et marque les esprits.",
       image: "/lovable-uploads/f671a1b4-5183-46ef-835a-75b92eab6c60.png",
@@ -72,7 +72,7 @@ const Services = () => {
     },
     {
       id: "design",
-      icon: <Palette size={32} />,
+      icon: <Palette size={28} />,
       title: "Design Graphique",
       description: "Un design réfléchi, un message renforcé. Boostly transforme vos idées en créations qui impactent. Misez sur l'excellence visuelle.",
       image: "/lovable-uploads/0a5321f9-4d35-4288-9ae5-649dacc5abe8.png",
@@ -87,7 +87,7 @@ const Services = () => {
     },
     {
       id: "website",
-      icon: <Globe size={32} />,
+      icon: <Globe size={28} />,
       title: "Création de Site Web",
       description: "Votre site web, votre meilleur ambassadeur. Avec Boostly, offrez à votre marque une vitrine sur mesure qui convertit vos visiteurs en clients.",
       image: "/lovable-uploads/1cecce09-2059-4d05-a432-baec427e97cd.png",
@@ -105,22 +105,22 @@ const Services = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="bg-gray-900 py-16 px-6 md:px-12 relative overflow-hidden">
+      <section className="bg-gray-900 py-12 px-6 md:px-12 relative overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute w-96 h-96 bg-boostly-blue/10 rounded-full blur-3xl top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2"></div>
         </div>
         
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="max-w-3xl">
-            <h1 className="text-3xl md:text-4xl font-bold text-white mb-6 animate-fade-in">Nos Services</h1>
-            <p className="text-lg md:text-xl text-gray-300 mb-8 animate-fade-in animation-delay-100 leading-relaxed">
+            <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 animate-fade-in">Nos Services</h1>
+            <p className="text-lg text-gray-300 mb-6 animate-fade-in animation-delay-100 leading-relaxed">
               Des solutions digitales complètes pour développer votre présence en ligne et faire grandir votre entreprise. Nous adaptons nos services à vos besoins spécifiques.
             </p>
             <a
               href="https://wa.me/24165735052"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center bg-boostly-blue hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 btn-glow animate-fade-in animation-delay-200 text-sm"
+              className="inline-flex items-center bg-boostly-blue hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 btn-glow animate-fade-in animation-delay-200 text-sm md:text-base"
             >
               Demander un Devis
               <MoveRight className="ml-2 h-4 w-4" />
@@ -130,9 +130,9 @@ const Services = () => {
       </section>
 
       {/* Main Services */}
-      <section className="py-16 px-6 md:px-12">
+      <section className="py-12 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Ce Que Nous Proposons</h2>
             <p className="text-gray-400 max-w-2xl mx-auto text-sm md:text-base">
               Des solutions digitales complètes pour propulser votre entreprise
@@ -143,31 +143,31 @@ const Services = () => {
             <div 
               key={service.id}
               id={service.id}
-              className={`flex flex-col ${index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-8 mb-16 last:mb-0 animate-fade-in`}
+              className={`flex flex-col ${index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-6 lg:gap-8 mb-12 last:mb-0 animate-fade-in`}
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="w-full lg:w-1/2">
                 <div className="glassmorphism p-1 rounded-2xl h-full">
-                  <div className="relative w-full h-full overflow-hidden rounded-xl">
+                  <div className="relative w-full h-64 lg:h-80 overflow-hidden rounded-xl">
                     <img 
                       src={service.image} 
                       alt={service.title} 
-                      className="object-cover w-full h-full aspect-video lg:aspect-auto transition-transform duration-500 hover:scale-105"
+                      className="object-contain w-full h-full bg-gray-900 transition-transform duration-500 hover:scale-105"
                     />
                   </div>
                 </div>
               </div>
               
               <div className="w-full lg:w-1/2 flex flex-col justify-center">
-                <div className="text-boostly-blue mb-4">
+                <div className="text-boostly-blue mb-3">
                   {service.icon}
                 </div>
-                <h3 className="text-xl md:text-2xl font-semibold text-white mb-4 leading-tight">{service.title}</h3>
-                <p className="text-gray-300 mb-6 text-sm md:text-base leading-relaxed">{service.description}</p>
+                <h3 className="text-xl md:text-2xl font-semibold text-white mb-3 leading-tight">{service.title}</h3>
+                <p className="text-gray-300 mb-4 text-sm md:text-base leading-relaxed">{service.description}</p>
                 
-                <div className="bg-gray-900 rounded-xl p-6 mb-4">
-                  <h4 className="text-base md:text-lg font-medium text-white mb-4">Inclus dans cette offre :</h4>
-                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <div className="bg-gray-900 rounded-xl p-4 md:p-6 mb-4">
+                  <h4 className="text-base md:text-lg font-medium text-white mb-3">Inclus dans cette offre :</h4>
+                  <ul className="grid grid-cols-1 gap-2">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start">
                         <div className="text-boostly-blue mt-1 mr-2 flex-shrink-0">
@@ -187,15 +187,15 @@ const Services = () => {
       </section>
       
       {/* CTA Section */}
-      <section className="py-16 px-6 md:px-12 relative overflow-hidden bg-gray-900">
+      <section className="py-12 px-6 md:px-12 relative overflow-hidden bg-gray-900">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute w-96 h-96 bg-boostly-blue/10 rounded-full blur-3xl top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
         </div>
         
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="glassmorphism p-8 md:p-12 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Prêt à Développer Votre Présence Digitale ?</h2>
-            <p className="text-gray-300 max-w-2xl mx-auto mb-8 text-sm md:text-base leading-relaxed">
+          <div className="glassmorphism p-6 md:p-12 text-center">
+            <h2 className="text-xl md:text-2xl font-bold text-white mb-4">Prêt à Développer Votre Présence Digitale ?</h2>
+            <p className="text-gray-300 max-w-2xl mx-auto mb-6 text-sm md:text-base leading-relaxed">
               Notre équipe d'experts est prête à vous accompagner dans votre transformation digitale. Contactez-nous pour discuter de votre projet.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -203,7 +203,7 @@ const Services = () => {
                 href="https://wa.me/24165735052"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-boostly-blue hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center btn-glow text-sm"
+                className="bg-boostly-blue hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center btn-glow text-sm md:text-base"
               >
                 WhatsApp (+241 65 73 50 52)
                 <MoveRight className="ml-2 h-4 w-4" />
@@ -212,7 +212,7 @@ const Services = () => {
                 href="https://wa.me/24177101378"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-transparent border border-boostly-blue text-boostly-blue hover:bg-boostly-blue/10 font-medium py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center text-sm"
+                className="bg-transparent border border-boostly-blue text-boostly-blue hover:bg-boostly-blue/10 font-medium py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center text-sm md:text-base"
               >
                 WhatsApp (+241 77 10 13 78)
               </a>

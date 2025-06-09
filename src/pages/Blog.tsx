@@ -130,51 +130,53 @@ const Blog = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="bg-gray-900 py-16 px-6 md:px-12">
+      <section className="bg-gray-900 py-12 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 animate-fade-in">Blog & Actualités</h1>
-            <p className="text-xl text-gray-300 mb-8 animate-fade-in animation-delay-100">
+            <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 animate-fade-in">Blog & Actualités</h1>
+            <p className="text-lg text-gray-300 mb-6 animate-fade-in animation-delay-100">
               Restez informé des dernières tendances du marketing digital, des actualités des réseaux sociaux et de nos conseils d'experts pour développer votre présence en ligne.
             </p>
           </div>
           
-          <div className="flex flex-col md:flex-row gap-4 items-center animate-fade-in animation-delay-200">
-            <div className="relative w-full md:w-1/2">
+          <div className="flex flex-col lg:flex-row gap-4 items-stretch animate-fade-in animation-delay-200">
+            <div className="relative w-full lg:w-1/2">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
               <Input
                 type="text"
                 placeholder="Rechercher des articles..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-10 bg-black border-boostly-blue/50 w-full"
+                className="pl-10 bg-black border-boostly-blue/50 w-full h-12"
               />
             </div>
             
-            <div className="w-full md:w-1/2 flex gap-2 overflow-x-auto pb-2 no-scrollbar flex-nowrap md:justify-end">
-              {categories.map(category => (
-                <button
-                  key={category}
-                  onClick={() => setActiveCategory(category)}
-                  className={`px-4 py-2 rounded-full whitespace-nowrap transition-colors text-sm ${
-                    activeCategory === category
-                      ? "bg-boostly-blue text-white"
-                      : "bg-black text-gray-300 hover:bg-gray-800"
-                  }`}
-                >
-                  {category}
-                </button>
-              ))}
+            <div className="w-full lg:w-1/2">
+              <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
+                {categories.map(category => (
+                  <button
+                    key={category}
+                    onClick={() => setActiveCategory(category)}
+                    className={`px-3 py-2 rounded-full whitespace-nowrap transition-colors text-sm flex-shrink-0 h-12 flex items-center ${
+                      activeCategory === category
+                        ? "bg-boostly-blue text-white"
+                        : "bg-black text-gray-300 hover:bg-gray-800"
+                    }`}
+                  >
+                    {category}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
       
       {/* Blog Posts */}
-      <section className="py-16 px-6 md:px-12">
+      <section className="py-12 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
           {filteredPosts.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredPosts.map((post, index) => (
                 <div
                   key={post.id}
@@ -183,36 +185,36 @@ const Blog = () => {
                   }`}
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <div className="relative h-48 overflow-hidden">
+                  <div className="relative h-44 overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
                     <img 
                       src={post.imageSrc} 
                       alt={post.title} 
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
-                    <div className="absolute top-4 left-4 z-20">
-                      <span className="bg-boostly-blue px-3 py-1 text-xs font-medium text-white rounded-full">
+                    <div className="absolute top-3 left-3 z-20">
+                      <span className="bg-boostly-blue px-2 py-1 text-xs font-medium text-white rounded-full">
                         {post.category}
                       </span>
                     </div>
                   </div>
                   
-                  <div className="p-6">
-                    <div className="flex items-center text-xs text-gray-400 mb-3">
+                  <div className="p-4 md:p-6">
+                    <div className="flex items-center text-xs text-gray-400 mb-2">
                       <span>{post.date}</span>
                       <span className="mx-2">•</span>
                       <span>{post.readTime}</span>
                     </div>
-                    <h3 className="text-lg font-semibold text-white mb-3 leading-tight group-hover:text-boostly-blue transition-colors">
+                    <h3 className="text-base md:text-lg font-semibold text-white mb-2 leading-snug group-hover:text-boostly-blue transition-colors line-clamp-2">
                       {post.title}
                     </h3>
-                    <p className="text-gray-300 mb-4 text-sm leading-relaxed">{post.excerpt}</p>
+                    <p className="text-gray-300 mb-3 text-sm leading-relaxed line-clamp-2">{post.excerpt}</p>
                     
                     <div className="flex items-center justify-between">
-                      <div className="text-xs text-gray-500">
+                      <div className="text-xs text-gray-500 truncate">
                         Source: {post.source}
                       </div>
-                      <button className="text-boostly-blue hover:text-blue-400 transition-colors text-sm font-medium">
+                      <button className="text-boostly-blue hover:text-blue-400 transition-colors text-sm font-medium flex-shrink-0">
                         Lire plus →
                       </button>
                     </div>
@@ -230,11 +232,11 @@ const Blog = () => {
       </section>
       
       {/* Newsletter Section */}
-      <section className="py-16 px-6 md:px-12 bg-gray-900">
+      <section className="py-12 px-6 md:px-12 bg-gray-900">
         <div className="max-w-7xl mx-auto">
-          <div className="glassmorphism p-8 md:p-12 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Restez Informé des Dernières Tendances</h2>
-            <p className="text-gray-300 max-w-2xl mx-auto mb-8">
+          <div className="glassmorphism p-6 md:p-12 text-center">
+            <h2 className="text-xl md:text-2xl font-bold text-white mb-4">Restez Informé des Dernières Tendances</h2>
+            <p className="text-gray-300 max-w-2xl mx-auto mb-6 text-sm md:text-base">
               Suivez-nous sur nos réseaux sociaux pour ne rien manquer des actualités du marketing digital et des conseils de nos experts.
             </p>
             
@@ -243,7 +245,7 @@ const Blog = () => {
                 href="https://www.facebook.com/boostlyagence"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-boostly-blue hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-lg transition-colors"
+                className="bg-boostly-blue hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-lg transition-colors text-sm md:text-base"
               >
                 Suivre sur Facebook
               </a>
@@ -251,7 +253,7 @@ const Blog = () => {
                 href="https://wa.me/24165735052"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-transparent border border-boostly-blue text-boostly-blue hover:bg-boostly-blue/10 font-medium py-3 px-6 rounded-lg transition-colors"
+                className="bg-transparent border border-boostly-blue text-boostly-blue hover:bg-boostly-blue/10 font-medium py-3 px-6 rounded-lg transition-colors text-sm md:text-base"
               >
                 Nous contacter
               </a>
