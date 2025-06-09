@@ -8,7 +8,6 @@ import Index from "./pages/Index";
 import Services from "./pages/Services";
 import Blog from "./pages/Blog";
 import BlogDetail from "./pages/BlogDetail";
-import References from "./pages/References";
 import Booking from "./pages/Booking";
 import NotFound from "./pages/NotFound";
 import Navbar from "./components/Navbar";
@@ -29,7 +28,6 @@ const App = () => (
             <Route path="/services" element={<Services />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:id" element={<BlogDetail />} />
-            <Route path="/references" element={<References />} />
             <Route path="/booking" element={<Booking />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

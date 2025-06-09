@@ -32,11 +32,11 @@ const ServiceCard = ({
       style={style}
     >
       <div className="relative h-64 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
         <img 
           src={imageSrc} 
           alt={title} 
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
         />
         <div className="absolute top-4 left-4 z-20 bg-black/60 backdrop-blur-sm p-2 rounded-lg">
           <div className="text-boostly-blue">

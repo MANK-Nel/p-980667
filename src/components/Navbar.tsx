@@ -31,13 +31,11 @@ const Navbar = () => {
     { name: 'Accueil', path: '/' },
     { name: 'Services', path: '/services' },
     { name: 'Blog', path: '/blog' },
-    { name: 'Références', path: '/references' },
     { name: 'Contact', path: '/booking' },
   ] : [
     { name: 'Home', path: '/' },
     { name: 'Services', path: '/services' },
     { name: 'Blog', path: '/blog' },
-    { name: 'References', path: '/references' },
     { name: 'Contact', path: '/booking' },
   ];
 
@@ -50,12 +48,11 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <NavLink to="/" className="flex items-center">
-          <div className="h-12 w-auto md:h-14 md:w-auto relative">
+          <div className="h-12 w-12 md:h-14 md:w-14 relative rounded-full overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20">
             <img 
               src="/lovable-uploads/5679b231-7f98-4ca6-a35b-6d287535c4f4.png" 
               alt="Boostly Agence Logo" 
-              className="h-full w-auto object-contain filter brightness-0 invert" 
-              style={{ filter: 'brightness(0) invert(1)' }}
+              className="h-full w-full object-contain p-1" 
             />
           </div>
         </NavLink>
