@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Mail, Facebook, MessageCircle } from 'lucide-react';
@@ -13,7 +12,7 @@ const Footer = () => {
             <div className="flex items-center space-x-3">
               <div className="h-10 w-10 relative rounded-full overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20">
                 <img 
-                  src="/lovable-uploads/5679b231-7f98-4ca6-a35b-6d287535c4f4.png" 
+                  src="/lovable-uploads/logo.jpg" 
                   alt="Boostly Agence Logo" 
                   className="h-full w-full object-contain p-1" 
                 />

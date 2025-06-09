@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { Menu, X, Globe } from 'lucide-react';
@@ -48,13 +47,8 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <NavLink to="/" className="flex items-center">
-          <div className="h-12 w-12 md:h-14 md:w-14 relative rounded-full overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20">
-            <img 
-              src="/lovable-uploads/5679b231-7f98-4ca6-a35b-6d287535c4f4.png" 
-              alt="Boostly Agence Logo" 
-              className="h-full w-full object-contain p-1" 
-            />
-          </div>
+          <img src="/lovable-uploads/logo.jpg" alt="Boostly Logo" className="h-10 w-10 object-contain mr-2" />
+          <span className="text-white font-bold text-xl tracking-tight">Boostly</span>
         </NavLink>
 
         {/* Desktop Navigation */}

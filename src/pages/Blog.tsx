@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import { Search, Calendar, ExternalLink, TrendingUp, Users, Target, Megaphone, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -20,7 +19,7 @@ const Blog = () => {
       category: "Stratégie",
       date: "15 Décembre 2024",
       readTime: "5 min",
-      image: "/lovable-uploads/fa4d5b40-dc7d-43d5-a8bc-00122ac72cf8.png",
+      image: "https://business.facebook.com/images/logo.png", // image officielle de la source
       source: "Meta Business",
       sourceUrl: "https://business.facebook.com/",
       tags: ["Contenu", "Réseaux sociaux", "Stratégie"]
@@ -32,7 +31,7 @@ const Blog = () => {
       category: "Instagram",
       date: "12 Décembre 2024",
       readTime: "7 min",
-      image: "/lovable-uploads/344229b4-7320-4c15-a5a5-e442fb7f5ba8.png",
+      image: "https://business.instagram.com/static/images/ig-bus-logo.png", // image officielle de la source
       source: "Instagram for Business",
       sourceUrl: "https://business.instagram.com/",
       tags: ["Instagram", "Stories", "Engagement"]
@@ -44,7 +43,7 @@ const Blog = () => {
       category: "WhatsApp Business",
       date: "10 Décembre 2024",
       readTime: "8 min",
-      image: "/lovable-uploads/3c50c7a3-59fe-4af0-bf6e-dd46018fae92.png",
+      image: "https://static.whatsapp.net/rsrc.php/v3/yR/r/eXC4U2F6U5b.png", // image officielle de la source
       source: "WhatsApp Business",
       sourceUrl: "https://business.whatsapp.com/",
       tags: ["WhatsApp", "API", "Communication"]
