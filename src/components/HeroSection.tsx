@@ -45,18 +45,18 @@ const HeroSection = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col items-center">
           <div className="max-w-4xl text-center">
-            <div className="flex items-center justify-center mb-4">
-              <div className="bg-boostly-blue/20 text-boostly-blue rounded-full px-4 py-1 text-sm font-medium inline-flex items-center">
-                <Sparkles className="h-3.5 w-3.5 mr-1" />
-                Solutions Adaptées à Votre Entreprise
+            <div className="flex items-center justify-center mb-6">
+              <div className="bg-boostly-blue/20 text-boostly-blue rounded-full px-4 py-2 text-sm font-medium inline-flex items-center">
+                <Sparkles className="h-3.5 w-3.5 mr-2" />
+                Faites la différence !
               </div>
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-glow mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-glow mb-6">
               Développez Votre <span className="text-boostly-blue">Présence Digitale</span> avec Boostly
             </h1>
             
-            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
               Nous créons et gérons votre présence en ligne pour faire rayonner votre marque. 
               De la stratégie digitale à la gestion de communauté, boostez votre visibilité avec nos experts.
             </p>
@@ -66,14 +66,14 @@ const HeroSection = () => {
                 href="https://wa.me/24165735052"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-boostly-blue hover:bg-blue-600 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 flex items-center justify-center btn-glow"
+                className="bg-boostly-blue hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center btn-glow text-sm"
               >
                 Démarrer mon Projet
-                <MoveRight className="ml-2 h-5 w-5" />
+                <MoveRight className="ml-2 h-4 w-4" />
               </a>
               <a
                 href="mailto:aboostly@gmail.com"
-                className="bg-transparent border border-boostly-blue text-boostly-blue hover:bg-boostly-blue/10 font-medium py-3 px-8 rounded-lg transition-all duration-300 flex items-center justify-center"
+                className="bg-transparent border border-boostly-blue text-boostly-blue hover:bg-boostly-blue/10 font-medium py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center text-sm"
               >
                 Nous Contacter
               </a>

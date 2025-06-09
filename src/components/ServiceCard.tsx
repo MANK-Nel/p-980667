@@ -31,28 +31,28 @@ const ServiceCard = ({
       )}
       style={style}
     >
-      <div className="relative h-48 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-t from-psyco-black-DEFAULT to-transparent z-10"></div>
+      <div className="relative h-64 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
         <img 
           src={imageSrc} 
           alt={title} 
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
-        <div className="absolute top-4 left-4 z-20 bg-psyco-black-card p-2 rounded-lg">
-          <div className="text-psyco-green-DEFAULT">
+        <div className="absolute top-4 left-4 z-20 bg-black/60 backdrop-blur-sm p-2 rounded-lg">
+          <div className="text-boostly-blue">
             {icon}
           </div>
         </div>
       </div>
       
       <div className="p-6">
-        <h3 className="text-xl font-semibold text-white mb-2">{title}</h3>
-        <p className="text-gray-300 mb-4 text-sm">{description}</p>
+        <h3 className="text-xl font-semibold text-white mb-3 leading-tight">{title}</h3>
+        <p className="text-gray-300 mb-4 text-sm leading-relaxed">{description}</p>
         <Link 
           to={link}
-          className="inline-flex items-center text-psyco-green-light hover:text-psyco-green-DEFAULT transition-colors duration-300 text-sm font-medium"
+          className="inline-flex items-center text-boostly-blue hover:text-blue-400 transition-colors duration-300 text-sm font-medium"
         >
-          Learn more
+          En savoir plus
           <ArrowRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
         </Link>
       </div>
