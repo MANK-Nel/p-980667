@@ -93,35 +93,37 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Navigation Menu */}
+      {/* Mobile Navigation Menu - Style inspiré de la capture */}
       <div
         className={cn(
-          'fixed inset-0 z-40 glassmorphism pt-20 px-8 transition-all duration-300 ease-in-out transform md:hidden',
-          isOpen ? 'translate-x-0' : 'translate-x-full'
+          'fixed inset-0 z-40 mobile-menu-overlay transition-all duration-300 ease-in-out transform md:hidden',
+          isOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
         )}
       >
-        <div className="flex flex-col space-y-4">
-          {navLinks.map((link) => (
+        <div className="flex flex-col pt-20 px-0">
+          {navLinks.map((link, index) => (
             <NavLink
               key={link.path}
               to={link.path}
               className={({ isActive }) =>
                 cn(
-                  'text-white hover:text-boostly-blue py-2 text-lg transition-colors duration-300',
-                  isActive && 'text-boostly-blue'
+                  'mobile-menu-item flex items-center px-6 py-4 text-white text-lg font-medium transition-all duration-300',
+                  isActive && 'text-boostly-blue bg-blue-600/10 border-l-4 border-l-blue-600'
                 )
               }
             >
-              {link.name}
+              <span className="flex-1">{link.name}</span>
+              <span className="text-gray-400">›</span>
             </NavLink>
           ))}
           
           <button
             onClick={() => setLanguage(language === 'fr' ? 'en' : 'fr')}
-            className="flex items-center text-white hover:text-boostly-blue transition-colors duration-300 py-2 text-lg"
+            className="mobile-menu-item flex items-center px-6 py-4 text-white text-lg font-medium transition-all duration-300"
           >
-            <Globe size={20} className="mr-2" />
-            {language === 'fr' ? 'English' : 'Français'}
+            <Globe size={20} className="mr-3" />
+            <span className="flex-1">{language === 'fr' ? 'English' : 'Français'}</span>
+            <span className="text-gray-400">›</span>
           </button>
         </div>
       </div>

@@ -31,12 +31,12 @@ const ServiceCard = ({
       )}
       style={style}
     >
-      <div className="relative h-56 overflow-hidden">
+      <div className="relative h-48 md:h-56 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
         <img 
           src={imageSrc} 
           alt={title} 
-          className="w-full h-full object-contain bg-gray-900 transition-transform duration-700 group-hover:scale-105"
+          className="service-image"
         />
         <div className="absolute top-4 left-4 z-20 bg-black/60 backdrop-blur-sm p-2 rounded-lg">
           <div className="text-boostly-blue">
@@ -45,9 +45,9 @@ const ServiceCard = ({
         </div>
       </div>
       
-      <div className="p-6">
+      <div className="p-4 md:p-6">
         <h3 className="text-lg md:text-xl font-semibold text-white mb-3 leading-tight">{title}</h3>
-        <p className="text-gray-300 mb-4 text-sm leading-relaxed">{description}</p>
+        <p className="text-gray-300 mb-4 text-sm leading-relaxed line-clamp-3">{description}</p>
         <Link 
           to={link}
           className="inline-flex items-center text-boostly-blue hover:text-blue-400 transition-colors duration-300 text-sm font-medium"

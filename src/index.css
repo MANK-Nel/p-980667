@@ -143,6 +143,65 @@
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
+
+  /* Menu mobile style */
+  .mobile-menu-overlay {
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(20px);
+  }
+
+  .mobile-menu-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+  }
+
+  .mobile-menu-item:hover {
+    background: rgba(30, 64, 175, 0.1);
+    border-left: 4px solid rgb(30, 64, 175);
+  }
+
+  .mobile-menu-item:last-child {
+    border-bottom: none;
+  }
+
+  /* Images des services optimisées */
+  .service-image {
+    object-fit: contain;
+    background: #0a0a0a;
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+  }
+
+  .service-image:hover {
+    transform: scale(1.02);
+  }
+
+  /* Blog titles fix */
+  .blog-title {
+    font-size: 1.125rem;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+
+  @media (max-width: 768px) {
+    .blog-title {
+      font-size: 1rem;
+      line-height: 1.4;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  /* Blog search bar fix */
+  .blog-search {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
 }
 
 @keyframes fadeIn {
