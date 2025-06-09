@@ -1,69 +1,43 @@
-# Welcome to your Lovable project
+# Boostly – Agence de Marketing Digital
 
-## Project info
+Bienvenue sur le projet Boostly, une agence spécialisée dans la création de contenu, le community management et la stratégie digitale.
 
-**URL**: https://lovable.dev/projects/4895dbd0-4609-4ca0-9728-8cee578eee22
+## 🚀 Démarrage rapide
 
-## How can I edit this code?
+1. **Cloner le dépôt**
+   ```sh
+   git clone <VOTRE_URL_GIT>
+   cd <NOM_DU_PROJET>
+   ```
+2. **Installer les dépendances**
+   ```sh
+   npm install
+   ```
+3. **Lancer le projet en local**
+   ```sh
+   npm run dev
+   ```
 
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/4895dbd0-4609-4ca0-9728-8cee578eee22) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with .
-
+## 🛠️ Technologies utilisées
 - Vite
-- TypeScript
-- React
-- shadcn-ui
+- React + TypeScript
 - Tailwind CSS
+- shadcn-ui
 
-## How can I deploy this project?
+## 🌍 Déploiement sur Vercel
 
-Simply open [Lovable](https://lovable.dev/projects/4895dbd0-4609-4ca0-9728-8cee578eee22) and click on Share -> Publish.
+1. Créez un compte sur [Vercel](https://vercel.com/).
+2. Importez ce dépôt depuis GitHub.
+3. Laissez Vercel détecter la configuration (Vite, React, etc.).
+4. Déployez automatiquement.
 
-## I want to use a custom domain - is that possible?
+## 🔗 Domaine personnalisé
+Ajoutez facilement un domaine personnalisé via le tableau de bord Vercel.
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+## 📁 Structure des assets
+- Les images et icônes doivent être placées dans le dossier `public/`.
+- Le dossier `/public/lovable-uploads/` a été supprimé pour alléger le projet.
+
+---
+
+Pour toute question, contactez l’équipe Boostly.
