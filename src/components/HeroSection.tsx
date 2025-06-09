@@ -1,7 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { MoveRight, Sparkles, Speaker, Music } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { MoveRight, Sparkles, TrendingUp, Target } from 'lucide-react';
 
 const HeroSection = () => {
   const backgroundRef = useRef<HTMLDivElement>(null);
@@ -31,51 +30,53 @@ const HeroSection = () => {
         className="absolute inset-0 z-0 transition-transform duration-500 ease-out"
         style={{ willChange: 'transform' }}
       >
-        <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-green-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/3 right-1/4 w-72 h-72 bg-green-400/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-boostly-blue/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-72 h-72 bg-blue-400/5 rounded-full blur-3xl"></div>
       </div>
       
       {/* Decorative Elements */}
       <div className="absolute top-1/4 left-20 hidden lg:block">
-        <Speaker className="h-12 w-12 text-green-500/30" />
+        <TrendingUp className="h-12 w-12 text-boostly-blue/30" />
       </div>
       <div className="absolute bottom-1/4 right-20 hidden lg:block">
-        <Music className="h-16 w-16 text-green-500/30" />
+        <Target className="h-16 w-16 text-boostly-blue/30" />
       </div>
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col items-center">
-          <div className="max-w-2xl">
-            <div className="flex items-center mb-4">
-              <div className="bg-green-500/20 text-green-400 rounded-full px-4 py-1 text-sm font-medium inline-flex items-center">
+          <div className="max-w-4xl text-center">
+            <div className="flex items-center justify-center mb-4">
+              <div className="bg-boostly-blue/20 text-boostly-blue rounded-full px-4 py-1 text-sm font-medium inline-flex items-center">
                 <Sparkles className="h-3.5 w-3.5 mr-1" />
-                Premium Sound & Light Services
+                Solutions Adaptées à Votre Entreprise
               </div>
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-glow mb-6">
-              Elevate Your <span className="text-green-500">Event</span> Experience
+              Développez Votre <span className="text-boostly-blue">Présence Digitale</span> avec Boostly
             </h1>
             
-            <p className="text-xl text-gray-300 mb-8">
-              Professional sound and lighting solutions that bring your event to life. 
-              From concerts to private parties, we deliver exceptional audiovisual experiences.
+            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+              Nous créons et gérons votre présence en ligne pour faire rayonner votre marque. 
+              De la stratégie digitale à la gestion de communauté, boostez votre visibilité avec nos experts.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                to="/booking"
-                className="bg-green-500 hover:bg-green-700 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 flex items-center justify-center btn-glow"
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="https://wa.me/24165735052"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-boostly-blue hover:bg-blue-600 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 flex items-center justify-center btn-glow"
               >
-                Book Now
+                Démarrer mon Projet
                 <MoveRight className="ml-2 h-5 w-5" />
-              </Link>
-              <Link
-                to="/services"
-                className="bg-transparent border border-green-500 text-green-500 hover:bg-green-500/10 font-medium py-3 px-8 rounded-lg transition-all duration-300 flex items-center justify-center"
+              </a>
+              <a
+                href="mailto:aboostly@gmail.com"
+                className="bg-transparent border border-boostly-blue text-boostly-blue hover:bg-boostly-blue/10 font-medium py-3 px-8 rounded-lg transition-all duration-300 flex items-center justify-center"
               >
-                Our Services
-              </Link>
+                Nous Contacter
+              </a>
             </div>
           </div>
         </div>

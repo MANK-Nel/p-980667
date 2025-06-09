@@ -33,17 +33,22 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				boostly: {
+					blue: '#1E40AF', // Primary blue from Boostly logo
+					'blue-light': '#3B82F6', // Lighter blue
+					'blue-dark': '#1E3A8A', // Darker blue
+				},
 				psyco: {
 					green: {
-						DEFAULT: '#10B981', // Primary green
-						light: '#34D399', // Lighter green
-						dark: '#059669', // Darker green
-						muted: 'rgba(16, 185, 129, 0.1)' // Transparent green for backgrounds
+						DEFAULT: '#10B981', // Keep for compatibility
+						light: '#34D399',
+						dark: '#059669',
+						muted: 'rgba(16, 185, 129, 0.1)'
 					},
 					black: {
-						DEFAULT: '#121212', // Deep black
-						light: '#1E1E1E', // Lighter black
-						card: 'rgba(30, 30, 30, 0.7)' // Semi-transparent black for cards
+						DEFAULT: '#121212',
+						light: '#1E1E1E',
+						card: 'rgba(30, 30, 30, 0.7)'
 					}
 				},
 				primary: {
@@ -102,8 +107,8 @@ export default {
 					'100%': { transform: 'translateX(0)', opacity: '1' }
 				},
 				'pulse-glow': {
-					'0%, 100%': { boxShadow: '0 0 10px rgba(16, 185, 129, 0.4)' },
-					'50%': { boxShadow: '0 0 20px rgba(16, 185, 129, 0.7)' }
+					'0%, 100%': { boxShadow: '0 0 10px rgba(30, 64, 175, 0.4)' },
+					'50%': { boxShadow: '0 0 20px rgba(30, 64, 175, 0.7)' }
 				},
 				'float': {
 					'0%, 100%': { transform: 'translateY(0px)' },
