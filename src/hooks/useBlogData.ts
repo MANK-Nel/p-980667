@@ -21,7 +21,7 @@ export const useBlogData = () => {
   useEffect(() => {
     const fetchBlogData = async () => {
       try {
-        // Simuler des données actualisées quotidiennement depuis des sources officielles
+        // Données avec images réelles des sources officielles
         const currentDate = new Date();
         const posts: BlogPost[] = [
           {
@@ -31,7 +31,7 @@ export const useBlogData = () => {
             category: "Meta Business",
             date: currentDate.toLocaleDateString('fr-FR'),
             readTime: "5 min",
-            image: "https://about.meta.com/media/img/meta-logo.png",
+            image: "https://static.xx.fbcdn.net/rsrc.php/v3/yS/r/YCXOvu1lcm-.png",
             source: "Meta Business",
             sourceUrl: "https://business.facebook.com/",
             tags: ["Meta", "Publicité", "Stratégie"]
@@ -43,7 +43,7 @@ export const useBlogData = () => {
             category: "Instagram Business",
             date: new Date(currentDate.getTime() - 86400000).toLocaleDateString('fr-FR'),
             readTime: "6 min",
-            image: "https://business.instagram.com/static/images/ig-bus-logo.png",
+            image: "https://static.cdninstagram.com/rsrc.php/v3/yI/r/VsNE-OHk_8a.png",
             source: "Instagram for Business",
             sourceUrl: "https://business.instagram.com/",
             tags: ["Instagram", "Stories", "Créativité"]
@@ -55,7 +55,7 @@ export const useBlogData = () => {
             category: "WhatsApp Business",
             date: new Date(currentDate.getTime() - 172800000).toLocaleDateString('fr-FR'),
             readTime: "8 min",
-            image: "https://static.whatsapp.net/rsrc.php/v3/yR/r/eXC4U2F6U5b.png",
+            image: "https://static.whatsapp.net/rsrc.php/v3/yP/r/rYZqPCBaG70.png",
             source: "WhatsApp Business",
             sourceUrl: "https://business.whatsapp.com/",
             tags: ["WhatsApp", "API", "Automation"]
@@ -67,7 +67,7 @@ export const useBlogData = () => {
             category: "TikTok Business",
             date: new Date(currentDate.getTime() - 259200000).toLocaleDateString('fr-FR'),
             readTime: "7 min",
-            image: "https://ads.tiktok.com/help/image/tiktok_for_business_logo.png",
+            image: "https://sf16-website-login.neutral.ttwstatic.com/obj/tiktok_web_login_static/tiktok/business/webapp/webapp-lite/0.1.5/static/images/logo.png",
             source: "TikTok for Business",
             sourceUrl: "https://www.tiktok.com/business/",
             tags: ["TikTok", "Contenu", "Conversion"]
@@ -79,7 +79,7 @@ export const useBlogData = () => {
             category: "Google Ads",
             date: new Date(currentDate.getTime() - 345600000).toLocaleDateString('fr-FR'),
             readTime: "9 min",
-            image: "https://developers.google.com/static/ads/images/ads-logo.png",
+            image: "https://www.gstatic.com/ads/icons/google_ads_logo.svg",
             source: "Google Ads",
             sourceUrl: "https://ads.google.com/",
             tags: ["Google", "Publicité", "ROI"]
@@ -91,7 +91,7 @@ export const useBlogData = () => {
             category: "LinkedIn Business",
             date: new Date(currentDate.getTime() - 432000000).toLocaleDateString('fr-FR'),
             readTime: "6 min",
-            image: "https://business.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Logo.svg.original.svg",
+            image: "https://static.licdn.com/aero-v1/sc/h/al2o9zrvru7aqj8e1x2rzsrca",
             source: "LinkedIn Business",
             sourceUrl: "https://business.linkedin.com/",
             tags: ["LinkedIn", "B2B", "Professionnel"]

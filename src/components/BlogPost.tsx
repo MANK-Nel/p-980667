@@ -45,20 +45,20 @@ const BlogPost = ({
       style={style}
     >
       <Link to={`/blog/${id}`}>
-        <div className="relative h-52 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-t from-psyco-black-DEFAULT to-transparent z-10"></div>
-          {imageSrc && (
-            <img 
-              src={imageSrc} 
-              alt={title} 
-              className="w-full h-full object-contain bg-white p-4 transition-transform duration-700 hover:scale-110"
-              onError={(e) => {
-                (e.target as HTMLImageElement).src = "/placeholder.svg";
-              }}
-            />
-          )}
+        <div className="relative h-52 overflow-hidden bg-white">
+          <div className="absolute inset-0 bg-gradient-to-t from-psyco-black-DEFAULT/20 to-transparent z-10"></div>
+          <img 
+            src={imageSrc} 
+            alt={title} 
+            className="w-full h-full object-contain p-6 transition-transform duration-700 hover:scale-110"
+            onError={(e) => {
+              console.error(`Failed to load image: ${imageSrc}`);
+              // Fallback vers une image placeholder si l'image ne charge pas
+              (e.target as HTMLImageElement).src = `https://via.placeholder.com/400x300/1E40AF/FFFFFF?text=${encodeURIComponent(source)}`;
+            }}
+          />
           <div className="absolute top-4 left-4 z-20">
-            <span className="bg-psyco-green-DEFAULT px-3 py-1 text-xs font-medium text-white rounded-full">
+            <span className="bg-boostly-blue px-3 py-1 text-xs font-medium text-white rounded-full">
               {category}
             </span>
           </div>
@@ -67,7 +67,7 @@ const BlogPost = ({
       
       <div className="p-6">
         <Link to={`/blog/${id}`}>
-          <h3 className="text-xl font-semibold text-white mb-2 hover:text-psyco-green-light transition-colors line-clamp-2">
+          <h3 className="text-xl font-semibold text-white mb-2 hover:text-boostly-blue transition-colors line-clamp-2">
             {title}
           </h3>
         </Link>
@@ -94,7 +94,7 @@ const BlogPost = ({
         <div className="flex items-center justify-between">
           <Link 
             to={`/blog/${id}`}
-            className="inline-flex items-center text-psyco-green-DEFAULT hover:text-psyco-green-light transition-colors duration-300 text-sm font-medium"
+            className="inline-flex items-center text-boostly-blue hover:text-blue-400 transition-colors duration-300 text-sm font-medium"
           >
             Lire l'article
           </Link>
