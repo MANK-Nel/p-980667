@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 import { Target, Users, TrendingUp, Globe, Edit, Palette, MoveRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -14,7 +15,7 @@ const Services = () => {
       icon: <TrendingUp size={28} />,
       title: "Stratégie de Communication Digitale",
       description: "Attirez, engagez et transformez votre audience. Boostly construit pour vous une stratégie digitale sur mesure qui maximise votre impact en ligne.",
-      image: "/lovable-uploads/strategie-communication-digitale.jpg",
+      image: "/lovable-uploads/7c452a1b-7322-4016-8e90-be0bbd96a1aa.png",
       features: [
         "Audit digital complet",
         "Définition des personas",
@@ -29,7 +30,7 @@ const Services = () => {
       icon: <Users size={28} />,
       title: "Gestion des Réseaux Sociaux",
       description: "Du contenu qui attire, une communauté qui s'engage. Avec Boostly, vos réseaux deviennent un véritable moteur de croissance pour votre entreprise.",
-      image: "/lovable-uploads/gestion-reseaux-sociaux.jpg",
+      image: "/lovable-uploads/6198a975-f7c8-4db0-94f9-549e36fb37b9.png",
       features: [
         "Gestion quotidienne des réseaux",
         "Création de contenu engageant",
@@ -44,7 +45,7 @@ const Services = () => {
       icon: <Edit size={28} />,
       title: "Création de Contenu Impactant",
       description: "Faites parler votre marque. Boostly crée des contenus qui font toute la différence et captivent votre audience cible.",
-      image: "/lovable-uploads/creation-contenu.jpg",
+      image: "/lovable-uploads/0b5cfb3d-b840-4f3e-ac4c-600caa79ab0b.png",
       features: [
         "Contenus visuels créatifs",
         "Rédaction web optimisée",
@@ -59,7 +60,7 @@ const Services = () => {
       icon: <Target size={28} />,
       title: "Branding",
       description: "Votre marque, votre histoire, notre expertise. Avec Boostly, construisez une identité qui inspire confiance et marque les esprits.",
-      image: "/lovable-uploads/branding.jpg",
+      image: "/lovable-uploads/ce3008af-7a70-4d8d-9cec-0e01487092f4.png",
       features: [
         "Création d'identité visuelle",
         "Développement de charte graphique",
@@ -74,7 +75,7 @@ const Services = () => {
       icon: <Palette size={28} />,
       title: "Design Graphique",
       description: "Un design réfléchi, un message renforcé. Boostly transforme vos idées en créations qui impactent. Misez sur l'excellence visuelle.",
-      image: "/lovable-uploads/design-graphique.jpg",
+      image: "/lovable-uploads/d23f8e53-4302-406f-8189-91c3fa3a52c8.png",
       features: [
         "Design pour réseaux sociaux",
         "Supports print et digital",
@@ -89,7 +90,7 @@ const Services = () => {
       icon: <Globe size={28} />,
       title: "Création de Site Web",
       description: "Votre site web, votre meilleur ambassadeur. Avec Boostly, offrez à votre marque une vitrine sur mesure qui convertit vos visiteurs en clients.",
-      image: "/lovable-uploads/creation-site-web.jpg",
+      image: "/lovable-uploads/36c7f9d3-3c1b-413d-92d2-54be77689c07.png",
       features: [
         "Sites vitrine professionnels",
         "Landing pages optimisées",

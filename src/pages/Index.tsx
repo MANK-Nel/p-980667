@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 import HeroSection from "@/components/HeroSection";
 import ServiceCard from "@/components/ServiceCard";
@@ -15,42 +16,42 @@ const Index = () => {
       title: "Stratégie de Communication Digitale",
       description: "Attirez, engagez et transformez votre audience. Boostly construit pour vous une stratégie digitale sur mesure.",
       icon: <TrendingUp size={24} />,
-      imageSrc: "/lovable-uploads/strategie-communication-digitale.jpg",
+      imageSrc: "/lovable-uploads/7c452a1b-7322-4016-8e90-be0bbd96a1aa.png",
       link: "/services#strategie"
     },
     {
       title: "Gestion des Réseaux Sociaux",
       description: "Du contenu qui attire, une communauté qui s'engage. Avec Boostly, vos réseaux deviennent un véritable moteur de croissance.",
       icon: <Users size={24} />,
-      imageSrc: "/lovable-uploads/gestion-reseaux-sociaux.jpg",
+      imageSrc: "/lovable-uploads/6198a975-f7c8-4db0-94f9-549e36fb37b9.png",
       link: "/services#community"
     },
     {
       title: "Création de Contenu Impactant",
       description: "Faites parler votre marque. Boostly crée des contenus qui font toute la différence.",
       icon: <Edit size={24} />,
-      imageSrc: "/lovable-uploads/creation-contenu.jpg",
+      imageSrc: "/lovable-uploads/0b5cfb3d-b840-4f3e-ac4c-600caa79ab0b.png",
       link: "/services#contenu"
     },
     {
       title: "Branding",
       description: "Votre marque, votre histoire, notre expertise. Avec Boostly, construisez une identité qui inspire confiance.",
       icon: <Target size={24} />,
-      imageSrc: "/lovable-uploads/branding.jpg",
+      imageSrc: "/lovable-uploads/ce3008af-7a70-4d8d-9cec-0e01487092f4.png",
       link: "/services#branding"
     },
     {
       title: "Design Graphique",
       description: "Un design réfléchi, un message renforcé. Boostly transforme vos idées en créations qui impactent. Misez sur l'excellence visuelle.",
       icon: <Palette size={24} />,
-      imageSrc: "/lovable-uploads/design-graphique.jpg",
+      imageSrc: "/lovable-uploads/d23f8e53-4302-406f-8189-91c3fa3a52c8.png",
       link: "/services#design"
     },
     {
       title: "Création de Site Web",
       description: "Votre site web, votre meilleur ambassadeur. Avec Boostly, offrez à votre marque une vitrine sur mesure qui convertit vos visiteurs en clients.",
       icon: <Globe size={24} />,
-      imageSrc: "/lovable-uploads/creation-site-web.jpg",
+      imageSrc: "/lovable-uploads/36c7f9d3-3c1b-413d-92d2-54be77689c07.png",
       link: "/services#website"
     },
   ];

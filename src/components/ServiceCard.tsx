@@ -37,9 +37,15 @@ const ServiceCard = ({
           src={imageSrc} 
           alt={title} 
           className="service-image w-full h-full object-cover"
+          loading="lazy"
           onError={(e) => {
             console.error(`Failed to load image: ${imageSrc}`);
-            e.currentTarget.style.display = 'none';
+            const target = e.currentTarget as HTMLImageElement;
+            target.style.backgroundColor = '#1f2937';
+            target.style.display = 'flex';
+            target.style.alignItems = 'center';
+            target.style.justifyContent = 'center';
+            target.alt = `Image pour ${title}`;
           }}
         />
         <div className="absolute top-4 left-4 z-20 bg-black/60 backdrop-blur-sm p-2 rounded-lg">
