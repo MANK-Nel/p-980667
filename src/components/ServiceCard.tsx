@@ -36,7 +36,11 @@ const ServiceCard = ({
         <img 
           src={imageSrc} 
           alt={title} 
-          className="service-image"
+          className="service-image w-full h-full object-cover"
+          onError={(e) => {
+            console.error(`Failed to load image: ${imageSrc}`);
+            e.currentTarget.style.display = 'none';
+          }}
         />
         <div className="absolute top-4 left-4 z-20 bg-black/60 backdrop-blur-sm p-2 rounded-lg">
           <div className="text-boostly-blue">

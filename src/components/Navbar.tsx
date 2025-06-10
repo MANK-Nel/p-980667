@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { Menu, X, Globe } from 'lucide-react';
@@ -47,7 +48,15 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <NavLink to="/" className="flex items-center">
-          <img src="/lovable-uploads/logo.jpg" alt="Boostly Logo" className="h-10 w-10 object-contain mr-2" />
+          <img 
+            src="/lovable-uploads/logo.jpg" 
+            alt="Boostly Logo" 
+            className="h-10 w-10 object-contain mr-2"
+            onError={(e) => {
+              console.error('Failed to load logo');
+              e.currentTarget.style.display = 'none';
+            }}
+          />
           <span className="text-white font-bold text-xl tracking-tight">Boostly</span>
         </NavLink>
 
@@ -87,7 +96,7 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Navigation Menu - Style inspiré de la capture */}
+      {/* Mobile Navigation Menu */}
       <div
         className={cn(
           'fixed inset-0 z-40 mobile-menu-overlay transition-all duration-300 ease-in-out transform md:hidden',

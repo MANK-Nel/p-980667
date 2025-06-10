@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Mail, Facebook, MessageCircle } from 'lucide-react';
@@ -14,7 +15,11 @@ const Footer = () => {
                 <img 
                   src="/lovable-uploads/logo.jpg" 
                   alt="Boostly Agence Logo" 
-                  className="h-full w-full object-contain p-1" 
+                  className="h-full w-full object-contain p-1"
+                  onError={(e) => {
+                    console.error('Failed to load logo in footer');
+                    e.currentTarget.style.display = 'none';
+                  }}
                 />
               </div>
               <h3 className="text-white font-semibold text-lg">Boostly Agence</h3>
