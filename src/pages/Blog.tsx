@@ -1,101 +1,29 @@
+
 import React, { useEffect, useState } from "react";
 import { Search, Calendar, ExternalLink, TrendingUp, Users, Target, Megaphone, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useBlogData } from "@/hooks/useBlogData";
 
 const Blog = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [filteredPosts, setFilteredPosts] = useState([]);
+  const { blogPosts, loading } = useBlogData();
+  const [filteredPosts, setFilteredPosts] = useState(blogPosts);
 
   // Scroll to top on page load
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const blogPosts = [
-    {
-      id: 1,
-      title: "Comment optimiser votre stratégie de contenu sur les réseaux sociaux en 2024",
-      excerpt: "Découvrez les dernières tendances et meilleures pratiques pour créer du contenu qui engage votre audience et génère des résultats.",
-      category: "Stratégie",
-      date: "15 Décembre 2024",
-      readTime: "5 min",
-      image: "https://business.facebook.com/images/logo.png", // image officielle de la source
-      source: "Meta Business",
-      sourceUrl: "https://business.facebook.com/",
-      tags: ["Contenu", "Réseaux sociaux", "Stratégie"]
-    },
-    {
-      id: 2,
-      title: "Instagram Stories : 10 techniques avancées pour maximiser l'engagement",
-      excerpt: "Exploitez tout le potentiel des Stories Instagram avec ces techniques éprouvées par les experts du marketing digital.",
-      category: "Instagram",
-      date: "12 Décembre 2024",
-      readTime: "7 min",
-      image: "https://business.instagram.com/static/images/ig-bus-logo.png", // image officielle de la source
-      source: "Instagram for Business",
-      sourceUrl: "https://business.instagram.com/",
-      tags: ["Instagram", "Stories", "Engagement"]
-    },
-    {
-      id: 3,
-      title: "WhatsApp Business API : Guide complet pour les entreprises",
-      excerpt: "Transformez WhatsApp en un puissant outil de communication client et augmentez vos conversions avec l'API Business.",
-      category: "WhatsApp Business",
-      date: "10 Décembre 2024",
-      readTime: "8 min",
-      image: "https://static.whatsapp.net/rsrc.php/v3/yR/r/eXC4U2F6U5b.png", // image officielle de la source
-      source: "WhatsApp Business",
-      sourceUrl: "https://business.whatsapp.com/",
-      tags: ["WhatsApp", "API", "Communication"]
-    },
-    {
-      id: 4,
-      title: "TikTok pour les entreprises : créer du contenu viral qui convertit",
-      excerpt: "Apprenez à créer du contenu TikTok authentique qui génère de la visibilité et attire de nouveaux clients.",
-      category: "TikTok",
-      date: "8 Décembre 2024",
-      readTime: "6 min",
-      image: "/lovable-uploads/f671a1b4-5183-46ef-835a-75b92eab6c60.png",
-      source: "TikTok for Business",
-      sourceUrl: "https://www.tiktok.com/business/",
-      tags: ["TikTok", "Contenu viral", "Marketing"]
-    },
-    {
-      id: 5,
-      title: "Design thinking pour votre identité de marque : créer une image mémorable",
-      excerpt: "Développez une identité visuelle forte qui reflète vos valeurs et marque l'esprit de vos clients.",
-      category: "Branding",
-      date: "5 Décembre 2024",
-      readTime: "9 min",
-      image: "/lovable-uploads/0a5321f9-4d35-4288-9ae5-649dacc5abe8.png",
-      source: "Design Council",
-      sourceUrl: "https://www.designcouncil.org.uk/",
-      tags: ["Branding", "Design", "Identité"]
-    },
-    {
-      id: 6,
-      title: "SEO et création de sites web : optimiser pour Google en 2024",
-      excerpt: "Techniques essentielles pour créer un site web qui se positionne en première page de Google.",
-      category: "Web Development",
-      date: "3 Décembre 2024",
-      readTime: "10 min",
-      image: "/lovable-uploads/1cecce09-2059-4d05-a432-baec427e97cd.png",
-      source: "Google Search Central",
-      sourceUrl: "https://developers.google.com/search",
-      tags: ["SEO", "Web", "Google"]
-    }
-  ];
-
   const categories = [
     { name: "Tous", icon: <Target size={16} />, count: blogPosts.length },
-    { name: "Stratégie", icon: <TrendingUp size={16} />, count: 2 },
-    { name: "Réseaux sociaux", icon: <Users size={16} />, count: 3 },
-    { name: "Branding", icon: <Megaphone size={16} />, count: 1 }
+    { name: "Meta Business", icon: <TrendingUp size={16} />, count: blogPosts.filter(p => p.category.includes("Meta")).length },
+    { name: "Réseaux sociaux", icon: <Users size={16} />, count: blogPosts.filter(p => p.category.includes("Instagram") || p.category.includes("TikTok")).length },
+    { name: "Communication", icon: <Megaphone size={16} />, count: blogPosts.filter(p => p.category.includes("WhatsApp") || p.category.includes("LinkedIn")).length }
   ];
 
   const searchKeywords = [
-    "Stratégie digitale", "Community management", "Branding", "Création de contenu", 
-    "Instagram", "Facebook", "TikTok", "WhatsApp Business", "SEO", "Design graphique"
+    "Meta Business", "Instagram Stories", "WhatsApp API", "TikTok Business", 
+    "Google Ads", "LinkedIn B2B", "Stratégie digitale", "Content marketing"
   ];
 
   useEffect(() => {
@@ -106,7 +34,15 @@ const Blog = () => {
       post.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
     );
     setFilteredPosts(filtered);
-  }, [searchTerm]);
+  }, [searchTerm, blogPosts]);
+
+  if (loading) {
+    return (
+      <div className="pt-20 min-h-screen flex items-center justify-center">
+        <div className="text-white text-lg">Chargement des articles...</div>
+      </div>
+    );
+  }
 
   return (
     <div className="pt-20">
@@ -120,7 +56,7 @@ const Blog = () => {
           <div className="max-w-3xl">
             <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 animate-fade-in">Blog Boostly</h1>
             <p className="text-lg text-gray-300 mb-6 animate-fade-in animation-delay-100 leading-relaxed">
-              Conseils, tendances et stratégies pour développer votre présence digitale et faire grandir votre entreprise.
+              Actualités et tendances du marketing digital directement depuis les sources officielles. Informations mises à jour quotidiennement.
             </p>
           </div>
         </div>
@@ -146,7 +82,7 @@ const Blog = () => {
                 <button
                   key={index}
                   onClick={() => setSearchTerm(keyword)}
-                  className="blog-search text-xs bg-gray-800 hover:bg-gray-700 text-gray-300 px-3 py-1 rounded-full transition-colors"
+                  className="text-xs bg-gray-800 hover:bg-gray-700 text-gray-300 px-3 py-1 rounded-full transition-colors"
                 >
                   {keyword}
                 </button>
@@ -184,7 +120,10 @@ const Blog = () => {
                   <img 
                     src={post.image} 
                     alt={post.title} 
-                    className="service-image group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-contain bg-white p-4 group-hover:scale-105 transition-transform duration-500"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = "/placeholder.svg";
+                    }}
                   />
                   <div className="absolute top-3 left-3">
                     <span className="bg-boostly-blue text-white text-xs font-medium px-2 py-1 rounded-full">
@@ -194,7 +133,7 @@ const Blog = () => {
                 </div>
                 
                 <div className="p-4 md:p-6">
-                  <h3 className="blog-title font-semibold text-white mb-2 leading-tight">
+                  <h3 className="text-lg font-semibold text-white mb-2 leading-tight line-clamp-2">
                     {post.title}
                   </h3>
                   <p className="text-gray-300 mb-4 text-sm leading-relaxed line-clamp-2">
