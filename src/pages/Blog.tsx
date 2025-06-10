@@ -9,7 +9,6 @@ const Blog = () => {
   const { blogPosts, loading } = useBlogData();
   const [filteredPosts, setFilteredPosts] = useState(blogPosts);
 
-  // Scroll to top on page load
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -35,6 +34,11 @@ const Blog = () => {
     );
     setFilteredPosts(filtered);
   }, [searchTerm, blogPosts]);
+
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    const target = e.target as HTMLImageElement;
+    target.src = "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop";
+  };
 
   if (loading) {
     return (
@@ -65,7 +69,6 @@ const Blog = () => {
       {/* Search and Categories */}
       <section className="py-8 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
-          {/* Search Bar */}
           <div className="relative mb-8">
             <div className="relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
@@ -90,7 +93,6 @@ const Blog = () => {
             </div>
           </div>
 
-          {/* Categories */}
           <div className="flex flex-wrap gap-4 mb-8">
             {categories.map((category, index) => (
               <button
@@ -120,10 +122,8 @@ const Blog = () => {
                   <img 
                     src={post.image} 
                     alt={post.title} 
-                    className="w-full h-full object-contain bg-white p-4 group-hover:scale-105 transition-transform duration-500"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).src = "/placeholder.svg";
-                    }}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    onError={handleImageError}
                   />
                   <div className="absolute top-3 left-3">
                     <span className="bg-boostly-blue text-white text-xs font-medium px-2 py-1 rounded-full">

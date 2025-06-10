@@ -35,6 +35,11 @@ const BlogPost = ({
   className,
   style
 }: BlogPostProps) => {
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    const target = e.target as HTMLImageElement;
+    target.src = `https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop&overlay=true&overlay-color=1E40AF&overlay-opacity=20&text=${encodeURIComponent(source)}&text-size=24&text-color=FFFFFF`;
+  };
+
   return (
     <article 
       className={cn(
@@ -45,17 +50,13 @@ const BlogPost = ({
       style={style}
     >
       <Link to={`/blog/${id}`}>
-        <div className="relative h-52 overflow-hidden bg-white">
+        <div className="relative h-52 overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800">
           <div className="absolute inset-0 bg-gradient-to-t from-psyco-black-DEFAULT/20 to-transparent z-10"></div>
           <img 
             src={imageSrc} 
             alt={title} 
-            className="w-full h-full object-contain p-6 transition-transform duration-700 hover:scale-110"
-            onError={(e) => {
-              console.error(`Failed to load image: ${imageSrc}`);
-              // Fallback vers une image placeholder si l'image ne charge pas
-              (e.target as HTMLImageElement).src = `https://via.placeholder.com/400x300/1E40AF/FFFFFF?text=${encodeURIComponent(source)}`;
-            }}
+            className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+            onError={handleImageError}
           />
           <div className="absolute top-4 left-4 z-20">
             <span className="bg-boostly-blue px-3 py-1 text-xs font-medium text-white rounded-full">
