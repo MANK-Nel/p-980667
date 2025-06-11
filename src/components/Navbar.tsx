@@ -1,134 +1,112 @@
 
-import React, { useState, useEffect } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
-import { Menu, X, Globe } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import React, { useState } from "react";
+import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const [language, setLanguage] = useState('fr');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  useEffect(() => {
-    setIsOpen(false);
-  }, [location.pathname]);
-
-  const navLinks = language === 'fr' ? [
-    { name: 'Accueil', path: '/' },
-    { name: 'Services', path: '/services' },
-    { name: 'Blog', path: '/blog' },
-    { name: 'Contact', path: '/booking' },
-  ] : [
-    { name: 'Home', path: '/' },
-    { name: 'Services', path: '/services' },
-    { name: 'Blog', path: '/blog' },
-    { name: 'Contact', path: '/booking' },
+  const menuItems = [
+    { name: "Accueil", path: "/" },
+    { name: "Services", path: "/services" },
+    { name: "Blog", path: "/blog" },
+    { name: "Réservation", path: "/booking" }
   ];
 
+  const isActive = (path: string) => location.pathname === path;
+
   return (
-    <nav
-      className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3 px-6 md:px-12',
-        scrolled ? 'glassmorphism bg-opacity-80' : 'bg-transparent'
-      )}
-    >
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <NavLink to="/" className="flex items-center">
-          <img 
-            src="/lovable-uploads/logo.jpg" 
-            alt="Boostly Logo" 
-            className="h-10 w-10 object-contain mr-2"
-            onError={(e) => {
-              console.error('Failed to load logo');
-              e.currentTarget.style.display = 'none';
-            }}
-          />
-          <span className="text-white font-bold text-xl tracking-tight">Boostly</span>
-        </NavLink>
+    <nav className="fixed top-0 left-0 right-0 z-50 glassmorphism">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="flex items-center justify-between h-16">
+          <Link to="/" className="flex items-center space-x-2">
+            <img 
+              src="/lovable-uploads/logo.jpg" 
+              alt="Boostly Logo" 
+              className="h-8 w-8 rounded-full object-cover"
+              onError={(e) => {
+                const target = e.currentTarget as HTMLImageElement;
+                target.style.display = 'none';
+                console.log('Logo failed to load');
+              }}
+            />
+            <span className="text-xl font-bold text-white">Boostly</span>
+          </Link>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-6">
-          {navLinks.map((link) => (
-            <NavLink
-              key={link.path}
-              to={link.path}
-              className={({ isActive }) =>
-                cn(
-                  'text-white hover:text-boostly-blue transition-colors duration-300 link-hover text-sm font-medium tracking-wide',
-                  isActive && 'text-boostly-blue after:w-full'
-                )
-              }
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center space-x-8">
+            {menuItems.map((item) => (
+              <Link
+                key={item.name}
+                to={item.path}
+                className={`text-sm font-medium transition-colors duration-300 link-hover ${
+                  isActive(item.path) 
+                    ? "text-boostly-blue" 
+                    : "text-gray-300 hover:text-white"
+                }`}
+              >
+                {item.name}
+              </Link>
+            ))}
+            <a
+              href="https://wa.me/24165735052"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-boostly-blue hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg transition-all duration-300 btn-glow text-sm"
             >
-              {link.name}
-            </NavLink>
-          ))}
-          
-          {/* Language Toggle */}
-          <button
-            onClick={() => setLanguage(language === 'fr' ? 'en' : 'fr')}
-            className="flex items-center text-white hover:text-boostly-blue transition-colors duration-300 text-sm"
-          >
-            <Globe size={16} className="mr-1" />
-            {language.toUpperCase()}
-          </button>
+              Contact
+            </a>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <div className="md:hidden">
+            <button
+              onClick={toggleMenu}
+              className="text-gray-300 hover:text-white focus:outline-none"
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
-        {/* Mobile Navigation Toggle */}
-        <button
-          className="md:hidden text-white hover:text-boostly-blue transition-colors"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
-
-      {/* Mobile Navigation Menu */}
-      <div
-        className={cn(
-          'fixed inset-0 z-40 mobile-menu-overlay transition-all duration-300 ease-in-out transform md:hidden',
-          isOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="md:hidden mobile-menu-overlay fixed inset-0 top-16 z-40">
+            <div className="flex flex-col">
+              {menuItems.map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`mobile-menu-item px-6 py-4 text-base font-medium transition-colors duration-300 ${
+                    isActive(item.path) 
+                      ? "text-boostly-blue bg-boostly-blue/10" 
+                      : "text-gray-300 hover:text-white"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              ))}
+              <div className="p-6">
+                <a
+                  href="https://wa.me/24165735052"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full bg-boostly-blue hover:bg-blue-600 text-white font-medium py-3 px-4 rounded-lg transition-all duration-300 btn-glow text-center"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Contact
+                </a>
+              </div>
+            </div>
+          </div>
         )}
-      >
-        <div className="flex flex-col pt-20 px-0">
-          {navLinks.map((link, index) => (
-            <NavLink
-              key={link.path}
-              to={link.path}
-              className={({ isActive }) =>
-                cn(
-                  'mobile-menu-item flex items-center px-6 py-4 text-white text-lg font-medium transition-all duration-300',
-                  isActive && 'text-boostly-blue bg-blue-600/10 border-l-4 border-l-blue-600'
-                )
-              }
-            >
-              <span className="flex-1">{link.name}</span>
-              <span className="text-gray-400">›</span>
-            </NavLink>
-          ))}
-          
-          <button
-            onClick={() => setLanguage(language === 'fr' ? 'en' : 'fr')}
-            className="mobile-menu-item flex items-center px-6 py-4 text-white text-lg font-medium transition-all duration-300"
-          >
-            <Globe size={20} className="mr-3" />
-            <span className="flex-1">{language === 'fr' ? 'English' : 'Français'}</span>
-            <span className="text-gray-400">›</span>
-          </button>
-        </div>
       </div>
     </nav>
   );
