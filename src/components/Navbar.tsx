@@ -121,24 +121,23 @@ const Navbar = () => {
         />
         
         {/* Menu Content */}
-        <div className={`absolute top-16 left-0 right-0 bottom-0 bg-gray-900/95 backdrop-blur-lg border-t border-white/10 transform transition-transform duration-300 ease-in-out ${
+        <div className={`absolute top-16 left-0 right-0 h-screen bg-gray-900/95 backdrop-blur-lg border-t border-white/10 transform transition-transform duration-300 ease-in-out ${
           isMenuOpen ? 'translate-y-0' : '-translate-y-full'
         }`}>
-          <div className="flex flex-col h-full">
-            <div className="flex-1 px-6 py-8 space-y-6">
+          <div className="flex flex-col h-full p-6">
+            <div className="flex-1 space-y-6 mt-8">
               {menuItems.map((item, index) => (
                 <Link
                   key={item.name}
                   to={item.path}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`block text-lg font-medium transition-all duration-300 transform ${
+                  className={`block text-lg font-medium transition-all duration-300 transform px-4 py-3 rounded-lg ${
                     isActive(item.path) 
-                      ? "text-boostly-blue bg-boostly-blue/10 px-4 py-3 rounded-lg" 
-                      : "text-gray-300 hover:text-white hover:bg-white/5 px-4 py-3 rounded-lg"
+                      ? "text-boostly-blue bg-boostly-blue/10" 
+                      : "text-gray-300 hover:text-white hover:bg-white/5"
                   }`}
                   style={{ 
                     animationDelay: `${index * 50}ms`,
-                    animation: isMenuOpen ? 'slideInLeft 0.3s ease-out forwards' : 'none'
                   }}
                 >
                   {item.name}
@@ -146,7 +145,7 @@ const Navbar = () => {
               ))}
             </div>
             
-            <div className="p-6 border-t border-white/10">
+            <div className="border-t border-white/10 pt-6">
               <a
                 href="https://wa.me/24165735052"
                 target="_blank"
@@ -160,19 +159,6 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes slideInLeft {
-          from {
-            opacity: 0;
-            transform: translateX(-20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-      `}</style>
     </>
   );
 };

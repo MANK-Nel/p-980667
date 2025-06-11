@@ -43,37 +43,43 @@ const HeroSection = () => {
       </div>
       
       <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col items-center">
-          <div className="max-w-4xl text-center">
-            <div className="flex items-center justify-center mb-6">
-              <div className="bg-boostly-blue/20 text-boostly-blue rounded-full px-4 py-2 text-sm font-medium inline-flex items-center">
-                <Sparkles className="h-3.5 w-3.5 mr-2" />
+        <div className="flex flex-col items-center text-center">
+          <div className="max-w-5xl">
+            <div className="flex items-center justify-center mb-8">
+              <div className="bg-boostly-blue/20 text-boostly-blue rounded-full px-6 py-3 text-sm font-medium inline-flex items-center backdrop-blur-sm border border-boostly-blue/20">
+                <Sparkles className="h-4 w-4 mr-2" />
                 Faites la différence !
               </div>
             </div>
             
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-glow mb-6">
-              Développez Votre <span className="text-boostly-blue">Présence Digitale</span> avec Boostly
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-8 text-white">
+              Développez Votre{" "}
+              <span className="bg-gradient-to-r from-boostly-blue via-blue-400 to-cyan-400 bg-clip-text text-transparent animate-pulse">
+                Présence Digitale
+              </span>
+              {" "}avec{" "}
+              <span className="text-boostly-blue">Boostly</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl lg:text-2xl text-gray-300 mb-10 max-w-4xl mx-auto leading-relaxed">
               Nous créons et gérons votre présence en ligne pour faire rayonner votre marque. 
-              De la stratégie digitale à la gestion de communauté, boostez votre visibilité avec nos experts.
+              De la stratégie digitale à la gestion de communauté, 
+              <span className="text-white font-medium"> boostez votre visibilité</span> avec nos experts.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <a
                 href="https://wa.me/24165735052"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-boostly-blue hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center btn-glow text-sm"
+                className="bg-gradient-to-r from-boostly-blue to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 flex items-center justify-center btn-glow text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
                 Démarrer mon Projet
-                <MoveRight className="ml-2 h-4 w-4" />
+                <MoveRight className="ml-2 h-5 w-5" />
               </a>
               <a
                 href="mailto:aboostly@gmail.com"
-                className="bg-transparent border border-boostly-blue text-boostly-blue hover:bg-boostly-blue/10 font-medium py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center text-sm"
+                className="bg-transparent border-2 border-boostly-blue text-boostly-blue hover:bg-boostly-blue hover:text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 flex items-center justify-center text-base backdrop-blur-sm"
               >
                 Nous Contacter
               </a>
