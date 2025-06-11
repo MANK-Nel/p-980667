@@ -4,6 +4,24 @@ import { MapPin, Phone, Mail, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const LogoComponent = () => {
+    try {
+      return (
+        <img 
+          src="/lovable-uploads/7cdcbaf8-243d-4687-b880-8f6f174d1b34.png" 
+          alt="Boostly Logo" 
+          className="h-8 w-8 rounded-full object-cover"
+          onError={(e) => {
+            const target = e.currentTarget as HTMLImageElement;
+            target.style.display = 'none';
+          }}
+        />
+      );
+    } catch {
+      return null;
+    }
+  };
+
   return (
     <footer className="bg-gray-900 text-white py-12 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
@@ -11,16 +29,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <img 
-                src="/lovable-uploads/logo.jpg" 
-                alt="Boostly Logo" 
-                className="h-8 w-8 rounded-full object-cover"
-                onError={(e) => {
-                  const target = e.currentTarget as HTMLImageElement;
-                  target.style.display = 'none';
-                  console.log('Footer logo failed to load');
-                }}
-              />
+              <LogoComponent />
               <span className="text-xl font-bold">Boostly</span>
             </div>
             <p className="text-gray-300 mb-4 leading-relaxed">

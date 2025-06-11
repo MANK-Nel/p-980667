@@ -20,21 +20,30 @@ const Navbar = () => {
 
   const isActive = (path: string) => location.pathname === path;
 
+  const LogoComponent = () => {
+    try {
+      return (
+        <img 
+          src="/lovable-uploads/7cdcbaf8-243d-4687-b880-8f6f174d1b34.png" 
+          alt="Boostly Logo" 
+          className="h-8 w-8 rounded-full object-cover"
+          onError={(e) => {
+            const target = e.currentTarget as HTMLImageElement;
+            target.style.display = 'none';
+          }}
+        />
+      );
+    } catch {
+      return null;
+    }
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glassmorphism">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center space-x-2">
-            <img 
-              src="/lovable-uploads/logo.jpg" 
-              alt="Boostly Logo" 
-              className="h-8 w-8 rounded-full object-cover"
-              onError={(e) => {
-                const target = e.currentTarget as HTMLImageElement;
-                target.style.display = 'none';
-                console.log('Logo failed to load');
-              }}
-            />
+            <LogoComponent />
             <span className="text-xl font-bold text-white">Boostly</span>
           </Link>
 
