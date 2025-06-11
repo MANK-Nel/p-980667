@@ -1,32 +1,40 @@
+
 {
   "name": "Boostly Agence - Marketing Digital",
   "short_name": "Boostly",
   "description": "Agence de marketing digital spécialisée dans la création de contenu et les stratégies digitales",
-  "theme_color": "#1E40AF",
-  "background_color": "#000000",
+  "theme_color": "#3b82f6",
+  "background_color": "#0f0f23",
   "display": "standalone",
-  "orientation": "portrait",
+  "orientation": "portrait-primary",
   "scope": "/",
   "start_url": "/",
+  "id": "/",
   "icons": [
     {
-      "src": "/lovable-uploads/Logo.jpg",
+      "src": "/favicon.ico",
+      "sizes": "16x16 32x32",
+      "type": "image/x-icon",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.ico",
       "sizes": "192x192",
-      "type": "image/jpg",
+      "type": "image/x-icon",
       "purpose": "maskable any"
     },
     {
-      "src": "/lovable-uploads/Logo.jpg",
+      "src": "/favicon.ico",
       "sizes": "512x512",
-      "type": "image/jpg",
+      "type": "image/x-icon",
       "purpose": "maskable any"
     }
   ],
-  "splash_pages": null,
   "categories": [
     "business",
     "marketing",
     "productivity"
   ],
-  "lang": "fr-FR"
+  "lang": "fr-FR",
+  "dir": "ltr"
 }
