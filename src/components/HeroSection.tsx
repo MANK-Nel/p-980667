@@ -54,11 +54,11 @@ const HeroSection = () => {
             
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6 md:mb-8 text-white">
               Développez Votre{" "}
-              <span className="bg-gradient-to-r from-boostly-blue via-blue-400 to-cyan-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-boostly-blue via-blue-400 to-cyan-400 bg-clip-text text-transparent animate-gradient-x">
                 Présence Digitale
               </span>
               {" "}avec{" "}
-              <span className="text-boostly-blue">Boostly</span>
+              <span className="text-boostly-blue glow-text">Boostly</span>
             </h1>
             
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-8 md:mb-10 max-w-4xl mx-auto leading-relaxed px-4">

@@ -1,122 +1,128 @@
 
 import React, { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, Calendar, Clock, User, Tag, Share2 } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { ArrowLeft, Calendar, Clock, User, Tag, Share2, ExternalLink } from "lucide-react";
 
 const getBlogPostById = (id: string) => {
+  const currentDate = new Date();
   const blogPosts = {
     "1": {
-      title: "Les nouvelles fonctionnalités Meta Business pour 2024",
-      date: "12 juin 2025",
+      title: "Meta lance ses nouvelles fonctionnalités IA pour les entreprises en 2024",
+      date: currentDate.toLocaleDateString('fr-FR'),
       readTime: "5 min de lecture",
       author: "Équipe Boostly",
       category: "Meta Business",
       imageSrc: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=400&fit=crop",
+      sourceUrl: "https://business.facebook.com/",
       content: [
         {
           type: "paragraph",
-          text: "Meta Business Platform continue d'évoluer en 2024 avec des fonctionnalités révolutionnaires qui transforment la façon dont les entreprises gèrent leurs campagnes publicitaires et interagissent avec leur audience."
+          text: "Meta a récemment dévoilé une suite d'outils d'intelligence artificielle révolutionnaires destinés aux entreprises, marquant une nouvelle ère dans la gestion publicitaire et l'engagement client."
         },
         {
           type: "heading",
-          text: "Nouvelles fonctionnalités d'automatisation"
+          text: "Intelligence artificielle générative pour la création publicitaire"
         },
         {
           type: "paragraph",
-          text: "Les nouvelles options d'automatisation permettent aux entreprises d'optimiser leurs campagnes en temps réel, avec des algorithmes d'apprentissage automatique plus sophistiqués."
+          text: "Les nouvelles fonctionnalités IA de Meta permettent aux entreprises de créer automatiquement des variations publicitaires, d'optimiser les campagnes en temps réel et de personnaliser l'expérience utilisateur à grande échelle."
         },
         {
           type: "list",
           items: [
-            "Optimisation automatique des enchères basée sur l'IA",
-            "Ciblage prédictif des audiences",
-            "Création automatique de variantes publicitaires",
-            "Analyse en temps réel des performances"
+            "Génération automatique de variantes publicitaires basée sur l'IA",
+            "Optimisation prédictive des enchères et du ciblage",
+            "Analyse sentiment en temps réel des interactions",
+            "Recommandations personnalisées pour l'optimisation des campagnes"
           ]
         },
         {
           type: "heading",
-          text: "Interface utilisateur repensée"
+          text: "Impact sur le marketing digital"
         },
         {
           type: "paragraph",
-          text: "Meta a complètement repensé l'interface de Business Manager pour offrir une expérience plus intuitive et efficace aux annonceurs de tous niveaux."
+          text: "Ces innovations transforment radicalement la façon dont les entreprises abordent le marketing digital, offrant des possibilités inédites d'automatisation et de personnalisation."
         }
       ],
       relatedPosts: ["2", "3", "4"]
     },
     "2": {
-      title: "Instagram Stories : nouvelles options créatives",
-      date: "11 juin 2025",
+      title: "Instagram présente ses nouveaux outils créatifs pour les Stories business",
+      date: new Date(currentDate.getTime() - 86400000).toLocaleDateString('fr-FR'),
       readTime: "6 min de lecture",
       author: "Équipe Boostly",
       category: "Instagram Business",
       imageSrc: "https://images.unsplash.com/photo-1611605698335-8b1569810432?w=800&h=400&fit=crop",
+      sourceUrl: "https://business.instagram.com/",
       content: [
         {
           type: "paragraph",
-          text: "Instagram continue d'innover avec de nouvelles options créatives pour les Stories business, offrant aux marques plus de possibilités d'engagement."
+          text: "Instagram enrichit son arsenal créatif avec de nouveaux filtres, stickers et options d'interaction spécialement conçus pour les comptes professionnels, offrant aux marques de nouvelles façons d'engager leur audience."
         }
       ],
       relatedPosts: ["1", "3", "5"]
     },
     "3": {
-      title: "WhatsApp Business API : guide complet",
-      date: "10 juin 2025",
+      title: "WhatsApp Business API 2024 : nouvelles fonctionnalités d'automatisation",
+      date: new Date(currentDate.getTime() - 172800000).toLocaleDateString('fr-FR'),
       readTime: "8 min de lecture",
       author: "Équipe Boostly",
       category: "WhatsApp Business",
       imageSrc: "https://images.unsplash.com/photo-1556244573-c3686c0f0e78?w=800&h=400&fit=crop",
+      sourceUrl: "https://business.whatsapp.com/",
       content: [
         {
           type: "paragraph",
-          text: "L'API WhatsApp Business offre de nouvelles possibilités d'automatisation et de personnalisation pour les communications client."
+          text: "WhatsApp déploie de puissantes fonctionnalités d'automatisation pour son API Business, révolutionnant la communication client avec des capacités de personnalisation et d'efficacité sans précédent."
         }
       ],
       relatedPosts: ["1", "2", "4"]
     },
     "4": {
-      title: "TikTok for Business : stratégies de contenu",
-      date: "9 juin 2025",
+      title: "TikTok for Business révolutionne le marketing avec de nouveaux formats publicitaires",
+      date: new Date(currentDate.getTime() - 259200000).toLocaleDateString('fr-FR'),
       readTime: "7 min de lecture",
       author: "Équipe Boostly",
       category: "TikTok Business",
       imageSrc: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&h=400&fit=crop",
+      sourceUrl: "https://www.tiktok.com/business/",
       content: [
         {
           type: "paragraph",
-          text: "Découvrez comment créer du contenu TikTok authentique qui génère de l'engagement et des conversions pour votre entreprise."
+          text: "TikTok lance des formats publicitaires innovants et des outils d'analyse avancés, redéfinissant les standards du marketing vidéo sur les réseaux sociaux."
         }
       ],
       relatedPosts: ["1", "2", "5"]
     },
     "5": {
-      title: "Google Ads : optimisations avancées pour 2024",
-      date: "8 juin 2025",
+      title: "Google Ads dévoile ses stratégies d'enchères intelligentes pour 2024",
+      date: new Date(currentDate.getTime() - 345600000).toLocaleDateString('fr-FR'),
       readTime: "9 min de lecture",
       author: "Équipe Boostly",
       category: "Google Ads",
       imageSrc: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800&h=400&fit=crop",
+      sourceUrl: "https://ads.google.com/",
       content: [
         {
           type: "paragraph",
-          text: "Les nouvelles stratégies d'enchères automatisées et d'optimisation des campagnes Google Ads pour maximiser votre ROI."
+          text: "Google Ads présente ses nouvelles stratégies d'enchères basées sur l'intelligence artificielle, promettant une optimisation automatique et un retour sur investissement optimisé."
         }
       ],
       relatedPosts: ["1", "4", "6"]
     },
     "6": {
-      title: "LinkedIn Business : tendances du marketing B2B",
-      date: "7 juin 2025",
+      title: "LinkedIn Business lance ses nouvelles solutions de marketing B2B",
+      date: new Date(currentDate.getTime() - 432000000).toLocaleDateString('fr-FR'),
       readTime: "6 min de lecture",
       author: "Équipe Boostly",
       category: "LinkedIn Business",
       imageSrc: "https://images.unsplash.com/photo-1586282391129-76a6df230234?w=800&h=400&fit=crop",
+      sourceUrl: "https://business.linkedin.com/",
       content: [
         {
           type: "paragraph",
-          text: "Les dernières tendances du marketing B2B sur LinkedIn et comment optimiser votre présence professionnelle."
+          text: "LinkedIn enrichit sa plateforme avec des outils de ciblage avancés et des formats de contenu inédits, optimisant les stratégies marketing B2B pour une nouvelle génération d'entreprises."
         }
       ],
       relatedPosts: ["1", "3", "5"]
@@ -211,18 +217,25 @@ const BlogDetail = () => {
                   ))}
                 </ul>
               );
-            } else if (section.type === "quote") {
-              return (
-                <blockquote key={index} className="border-l-4 border-boostly-blue pl-4 italic my-6">
-                  <p className="text-gray-300 mb-2">"{section.text}"</p>
-                  {section.author && (
-                    <footer className="text-sm text-gray-400">— {section.author}</footer>
-                  )}
-                </blockquote>
-              );
             }
             return null;
           })}
+        </div>
+        
+        {/* Source link */}
+        <div className="mt-8 p-4 bg-gray-800/50 rounded-lg border border-gray-700">
+          <div className="flex items-center justify-between">
+            <span className="text-gray-400 text-sm">Source de l'article :</span>
+            <a 
+              href={post.sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center text-boostly-blue hover:text-blue-400 transition-colors text-sm font-medium"
+            >
+              <ExternalLink className="h-4 w-4 mr-2" />
+              {post.category}
+            </a>
+          </div>
         </div>
         
         {/* Share buttons */}
@@ -247,15 +260,14 @@ const BlogDetail = () => {
                 if (!relatedPost) return null;
                 
                 return (
-                  <div key={relatedId} className="glassmorphism overflow-hidden card-hover">
-                    <Link to={`/blog/${relatedId}`} className="block">
-                      <div className="p-6">
-                        <h4 className="text-lg font-medium text-white mb-2 hover:text-boostly-blue transition-colors">
-                          {relatedPost.title}
-                        </h4>
-                      </div>
-                    </Link>
-                  </div>
+                  <Link key={relatedId} to={`/blog/${relatedId}`} className="block">
+                    <div className="glassmorphism overflow-hidden card-hover p-6">
+                      <h4 className="text-lg font-medium text-white mb-2 hover:text-boostly-blue transition-colors">
+                        {relatedPost.title}
+                      </h4>
+                      <p className="text-gray-400 text-sm">{relatedPost.category}</p>
+                    </div>
+                  </Link>
                 );
               })}
             </div>
