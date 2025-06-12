@@ -26,43 +26,54 @@ const ServiceCard = ({
   return (
     <article 
       className={cn(
-        "glassmorphism overflow-hidden group card-hover transition-all duration-500 bg-gray-900/50 h-full flex flex-col",
+        "glassmorphism-card card-hover transition-all duration-500 h-full flex flex-col relative group",
         className
       )}
       style={style}
     >
-      <div className="relative h-48 md:h-56 overflow-hidden bg-gray-800 flex-shrink-0">
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"></div>
+      {/* Image Container with Glass Frame */}
+      <div className="relative h-52 md:h-60 overflow-hidden flex-shrink-0 image-glass-frame">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent z-20"></div>
         <img 
           src={imageSrc} 
           alt={`Service ${title}`}
-          className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
+          className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110 relative z-10"
           loading="lazy"
           onError={(e) => {
             const target = e.currentTarget as HTMLImageElement;
             target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjMWYyOTM3Ii8+CjxwYXRoIGQ9Ik0yMDAgMTAwVjIwME0xNTAgMTUwSDI1MCIgc3Ryb2tlPSIjM2I4MmY2IiBzdHJva2Utd2lkdGg9IjIiLz4KPHN2Zz4K';
           }}
         />
-        <div className="absolute top-3 left-3 md:top-4 md:left-4 z-20 bg-black/60 backdrop-blur-sm p-2 md:p-3 rounded-xl border border-white/10">
-          <div className="text-boostly-blue">
-            {icon}
+        
+        {/* Icon Badge with Glass Effect */}
+        <div className="absolute top-4 left-4 md:top-6 md:left-6 z-30">
+          <div className="glassmorphism p-3 md:p-4 rounded-xl border border-boostly-blue/30 group-hover:border-boostly-blue/50 transition-all duration-300">
+            <div className="text-boostly-blue group-hover:text-blue-300 transition-colors duration-300">
+              {icon}
+            </div>
           </div>
         </div>
       </div>
       
-      <div className="p-4 md:p-6 flex-grow flex flex-col">
-        <h3 className="text-lg md:text-xl font-semibold text-white mb-2 md:mb-3 leading-tight group-hover:text-boostly-blue transition-colors duration-300">
+      {/* Content Section */}
+      <div className="p-6 md:p-8 flex-grow flex flex-col relative z-10">
+        <h3 className="text-xl md:text-2xl font-semibold text-white mb-3 md:mb-4 leading-tight group-hover:text-boostly-blue transition-colors duration-300 text-glow-soft">
           {title}
         </h3>
-        <p className="text-gray-300 mb-4 md:mb-6 text-xs md:text-sm leading-relaxed flex-grow">
+        <p className="text-gray-300 mb-6 md:mb-8 text-sm md:text-base leading-relaxed flex-grow">
           {description}
         </p>
+        
+        {/* Premium CTA Button */}
         <Link 
           to={link}
-          className="inline-flex items-center text-boostly-blue hover:text-blue-400 transition-all duration-300 text-xs md:text-sm font-medium group/link mt-auto"
+          className="inline-flex items-center glassmorphism border border-boostly-blue/40 text-boostly-blue hover:bg-boostly-blue hover:text-white hover:border-boostly-blue transition-all duration-300 text-sm md:text-base font-medium mt-auto py-3 px-6 rounded-lg group/link"
         >
-          En savoir plus
-          <ArrowRight className="ml-2 h-3 w-3 md:h-4 md:w-4 transition-transform duration-300 group-hover/link:translate-x-1" />
+          <span className="relative z-10">En savoir plus</span>
+          <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 transition-transform duration-300 group-hover/link:translate-x-1 relative z-10" />
+          
+          {/* Hover overlay */}
+          <div className="absolute inset-0 bg-boostly-blue/10 rounded-lg scale-0 group-hover/link:scale-100 transition-transform duration-300 -z-10"></div>
         </Link>
       </div>
     </article>

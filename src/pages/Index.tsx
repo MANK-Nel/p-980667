@@ -61,25 +61,27 @@ const Index = () => {
       <HeroSection />
       
       {/* Services Section */}
-      <section className="py-16 px-6 md:px-12">
+      <section className="py-20 px-6 md:px-12 relative">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-12">
-            <div>
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Nos Services</h2>
-              <p className="text-gray-400 max-w-2xl text-sm md:text-base">
-                Des solutions adaptées à votre entreprise pour développer votre présence digitale
-              </p>
+          <div className="glassmorphism-card p-8 md:p-12 mb-16">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 text-glow-soft">Nos Services</h2>
+                <p className="text-gray-300 max-w-2xl text-base md:text-lg leading-relaxed">
+                  Des solutions adaptées à votre entreprise pour développer votre présence digitale
+                </p>
+              </div>
+              <Link 
+                to="/services"
+                className="mt-6 sm:mt-0 glassmorphism border border-boostly-blue/40 text-boostly-blue hover:bg-boostly-blue hover:text-white transition-all duration-300 px-6 py-3 rounded-lg flex items-center text-base font-medium"
+              >
+                Voir tous nos services
+                <MoveRight className="ml-2 h-5 w-5" />
+              </Link>
             </div>
-            <Link 
-              to="/services"
-              className="mt-4 sm:mt-0 flex items-center text-boostly-blue hover:text-blue-400 transition-colors text-sm font-medium"
-            >
-              Voir tous nos services
-              <MoveRight className="ml-1 h-4 w-4" />
-            </Link>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredServices.map((service, index) => (
               <ServiceCard
                 key={index}
@@ -93,72 +95,72 @@ const Index = () => {
       </section>
       
       {/* Solutions Types Section */}
-      <section className="py-16 px-6 md:px-12 bg-gray-900">
+      <section className="py-20 px-6 md:px-12 relative">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Solutions Adaptées</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto text-sm md:text-base">
+          <div className="glassmorphism-card p-8 md:p-12 mb-16 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 text-glow-soft">Solutions Adaptées</h2>
+            <p className="text-gray-300 max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
               Nous accompagnons tous types d'entreprises dans leur transformation digitale
             </p>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { name: "Startups", icon: <TrendingUp size={28} /> },
-              { name: "PME", icon: <Target size={28} /> },
-              { name: "E-commerce", icon: <Globe size={28} /> },
-              { name: "Freelances", icon: <Smartphone size={28} /> }
+              { name: "Startups", icon: <TrendingUp size={32} /> },
+              { name: "PME", icon: <Target size={32} /> },
+              { name: "E-commerce", icon: <Globe size={32} /> },
+              { name: "Freelances", icon: <Smartphone size={32} /> }
             ].map((type, index) => (
               <div 
                 key={index}
-                className="glassmorphism flex flex-col items-center justify-center py-6 px-4 text-center card-hover animate-fade-in"
+                className="glassmorphism-card flex flex-col items-center justify-center py-8 px-6 text-center card-hover animate-fade-in border border-boostly-blue/20"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="text-boostly-blue mb-3">
+                <div className="text-boostly-blue mb-4 p-4 glassmorphism rounded-xl border border-boostly-blue/30">
                   {type.icon}
                 </div>
-                <h3 className="text-base font-medium text-white">{type.name}</h3>
+                <h3 className="text-lg font-semibold text-white text-glow-soft">{type.name}</h3>
               </div>
             ))}
           </div>
           
-          <div className="mt-12 text-center">
+          <div className="mt-16 text-center">
             <Link
               to="/services"
-              className="inline-flex items-center bg-boostly-blue hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 btn-glow text-sm"
+              className="btn-glow text-white font-medium py-4 px-8 rounded-xl transition-all duration-300 text-lg inline-flex items-center"
             >
               Découvrir nos Solutions
-              <MoveRight className="ml-2 h-4 w-4" />
+              <MoveRight className="ml-3 h-5 w-5" />
             </Link>
           </div>
         </div>
       </section>
       
       {/* CTA Section */}
-      <section className="py-16 px-6 md:px-12 relative overflow-hidden">
+      <section className="py-20 px-6 md:px-12 relative overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute w-96 h-96 bg-boostly-blue/10 rounded-full blur-3xl top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+          <div className="absolute w-96 h-96 bg-boostly-blue/10 rounded-full blur-3xl top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 floating-element"></div>
         </div>
         
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Prêt à Booster Votre Présence Digitale ?</h2>
-            <p className="text-gray-300 max-w-2xl mx-auto mb-8 text-sm md:text-base">
+          <div className="glassmorphism-card p-12 md:p-16 text-center border border-boostly-blue/30">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-glow-soft">Prêt à Booster Votre Présence Digitale ?</h2>
+            <p className="text-gray-300 max-w-3xl mx-auto mb-10 text-base md:text-lg leading-relaxed">
               Laissez-nous vous accompagner dans votre transformation digitale. Contactez-nous dès aujourd'hui pour discuter de votre projet.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <a
                 href="https://wa.me/24165735052"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-boostly-blue hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center btn-glow text-sm"
+                className="btn-glow text-white font-medium py-4 px-8 rounded-xl transition-all duration-300 flex items-center justify-center text-lg"
               >
                 Contacter sur WhatsApp
-                <MoveRight className="ml-2 h-4 w-4" />
+                <MoveRight className="ml-3 h-5 w-5" />
               </a>
               <Link
                 to="/services"
-                className="bg-transparent border border-boostly-blue text-boostly-blue hover:bg-boostly-blue/10 font-medium py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center text-sm"
+                className="glassmorphism border-2 border-boostly-blue text-boostly-blue hover:bg-boostly-blue hover:text-white font-medium py-4 px-8 rounded-xl transition-all duration-300 flex items-center justify-center text-lg"
               >
                 Voir nos Services
               </Link>
