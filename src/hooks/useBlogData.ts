@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 
 interface BlogPost {
-  id: number;
+  id: string;
   title: string;
   excerpt: string;
   category: string;
@@ -24,7 +24,7 @@ export const useBlogData = () => {
         const currentDate = new Date();
         const posts: BlogPost[] = [
           {
-            id: 1,
+            id: "1",
             title: "Les nouvelles fonctionnalités Meta Business pour 2024",
             excerpt: "Découvrez les dernières mises à jour de Meta Business Platform qui révolutionnent la gestion publicitaire et l'engagement client.",
             category: "Meta Business",
@@ -36,7 +36,7 @@ export const useBlogData = () => {
             tags: ["Meta", "Publicité", "Stratégie"]
           },
           {
-            id: 2,
+            id: "2",
             title: "Instagram Stories : nouvelles options créatives pour les entreprises",
             excerpt: "Instagram déploie de nouveaux outils créatifs pour les Stories business, permettant une meilleure interaction avec votre audience.",
             category: "Instagram Business",
@@ -48,7 +48,7 @@ export const useBlogData = () => {
             tags: ["Instagram", "Stories", "Créativité"]
           },
           {
-            id: 3,
+            id: "3",
             title: "WhatsApp Business API : guide complet des nouveautés",
             excerpt: "Les dernières fonctionnalités de l'API WhatsApp Business pour automatiser et personnaliser vos communications client.",
             category: "WhatsApp Business",
@@ -60,7 +60,7 @@ export const useBlogData = () => {
             tags: ["WhatsApp", "API", "Automation"]
           },
           {
-            id: 4,
+            id: "4",
             title: "TikTok for Business : stratégies de contenu qui convertissent",
             excerpt: "Comment créer du contenu TikTok authentique qui génère de l'engagement et des conversions pour votre entreprise.",
             category: "TikTok Business",
@@ -72,7 +72,7 @@ export const useBlogData = () => {
             tags: ["TikTok", "Contenu", "Conversion"]
           },
           {
-            id: 5,
+            id: "5",
             title: "Google Ads : optimisations avancées pour 2024",
             excerpt: "Les nouvelles stratégies d'enchères automatisées et d'optimisation des campagnes Google Ads pour maximiser votre ROI.",
             category: "Google Ads",
@@ -84,7 +84,7 @@ export const useBlogData = () => {
             tags: ["Google", "Publicité", "ROI"]
           },
           {
-            id: 6,
+            id: "6",
             title: "LinkedIn Business : tendances du marketing B2B",
             excerpt: "Les dernières tendances du marketing B2B sur LinkedIn et comment optimiser votre présence professionnelle.",
             category: "LinkedIn Business",

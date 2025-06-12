@@ -6,119 +6,120 @@ import { cn } from "@/lib/utils";
 
 const getBlogPostById = (id: string) => {
   const blogPosts = {
-    "tentacular-urutz": {
-      title: "PA Rental & Live Sets on Tentacular Urutz Party, Italy",
-      date: "April 8, 2023",
-      readTime: "6 min read",
-      author: "Technical Crew",
-      category: "Sound",
-      imageSrc: "/lovable-uploads/8dced82a-6a2c-48ee-a060-463c28764183.png",
+    "1": {
+      title: "Les nouvelles fonctionnalités Meta Business pour 2024",
+      date: "12 juin 2025",
+      readTime: "5 min de lecture",
+      author: "Équipe Boostly",
+      category: "Meta Business",
+      imageSrc: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=400&fit=crop",
       content: [
         {
           type: "paragraph",
-          text: "Our team recently had the pleasure of providing sound reinforcement services for the Tentacular Urutz Party, an underground psychedelic trance event held in Italy. This project showcased our custom-built horn-loaded sound system, specifically designed for electronic music events that demand exceptional low-frequency performance and crystal-clear highs."
+          text: "Meta Business Platform continue d'évoluer en 2024 avec des fonctionnalités révolutionnaires qui transforment la façon dont les entreprises gèrent leurs campagnes publicitaires et interagissent avec leur audience."
         },
         {
           type: "heading",
-          text: "The Sound System Setup"
+          text: "Nouvelles fonctionnalités d'automatisation"
         },
         {
           type: "paragraph",
-          text: "For this event, we deployed our signature horn-loaded sound system featuring custom-designed speaker cabinets. The main stack included:"
+          text: "Les nouvelles options d'automatisation permettent aux entreprises d'optimiser leurs campagnes en temps réel, avec des algorithmes d'apprentissage automatique plus sophistiqués."
         },
         {
           type: "list",
           items: [
-            "4 x Horn-loaded mid-high cabinets with compression drivers",
-            "2 x Horn-loaded low-mid cabinets",
-            "4 x Folded horn subwoofers for extreme low-frequency response",
-            "Professional-grade amplification with digital signal processing",
-            "Complete DJ and live performer audio interface setup"
+            "Optimisation automatique des enchères basée sur l'IA",
+            "Ciblage prédictif des audiences",
+            "Création automatique de variantes publicitaires",
+            "Analyse en temps réel des performances"
           ]
         },
         {
-          type: "paragraph",
-          text: "The horn-loaded design offers several advantages for psychedelic trance events, including greater efficiency, better directivity control, and reduced power requirements compared to conventional speaker designs. This results in cleaner sound at high volumes with minimal distortion."
-        },
-        {
           type: "heading",
-          text: "Technical Challenges and Solutions"
+          text: "Interface utilisateur repensée"
         },
         {
           type: "paragraph",
-          text: "The venue presented several acoustic challenges, including a relatively low ceiling height and parallel reflective surfaces. Our team addressed these issues by:"
-        },
-        {
-          type: "list",
-          items: [
-            "Carefully positioning the speakers to minimize unwanted reflections",
-            "Implementing precise time alignment between all components",
-            "Applying targeted equalization to compensate for room modes",
-            "Using strategic acoustic treatment at critical reflection points"
-          ]
-        },
-        {
-          type: "paragraph",
-          text: "The end result was a sound system that delivered exceptional clarity and impact, with the characteristic psychedelic trance sound that combines punchy, articulate bass with detailed highs that don't fatigue the ears even during long sessions."
-        },
-        {
-          type: "heading",
-          text: "Live Performance Support"
-        },
+          text: "Meta a complètement repensé l'interface de Business Manager pour offrir une expérience plus intuitive et efficace aux annonceurs de tous niveaux."
+        }
+      ],
+      relatedPosts: ["2", "3", "4"]
+    },
+    "2": {
+      title: "Instagram Stories : nouvelles options créatives",
+      date: "11 juin 2025",
+      readTime: "6 min de lecture",
+      author: "Équipe Boostly",
+      category: "Instagram Business",
+      imageSrc: "https://images.unsplash.com/photo-1611605698335-8b1569810432?w=800&h=400&fit=crop",
+      content: [
         {
           type: "paragraph",
-          text: "Beyond providing the sound system, our team also supported several live acts during the event. This included setting up monitoring solutions for performers, managing complex audio routing for hybrid DJ/live setups, and ensuring seamless transitions between acts."
-        },
+          text: "Instagram continue d'innover avec de nouvelles options créatives pour les Stories business, offrant aux marques plus de possibilités d'engagement."
+        }
+      ],
+      relatedPosts: ["1", "3", "5"]
+    },
+    "3": {
+      title: "WhatsApp Business API : guide complet",
+      date: "10 juin 2025",
+      readTime: "8 min de lecture",
+      author: "Équipe Boostly",
+      category: "WhatsApp Business",
+      imageSrc: "https://images.unsplash.com/photo-1556244573-c3686c0f0e78?w=800&h=400&fit=crop",
+      content: [
         {
           type: "paragraph",
-          text: "The visual aesthetic of the sound system, featuring the distinctive artwork visible in the image, complemented the event's visual design and contributed to the immersive atmosphere that made the Tentacular Urutz Party a standout success."
-        },
-        {
-          type: "heading",
-          text: "Client Feedback"
-        },
-        {
-          type: "quote",
-          text: "The sound quality at our event exceeded our expectations. The system had incredible presence and depth while maintaining perfect clarity. Even at high volume levels, the sound remained comfortable and engaging. Many attendees commented specifically on the audio quality, which is rare and speaks to the exceptional work done by the technical team.",
-          author: "Event Organizer, Tentacular Urutz"
-        },
+          text: "L'API WhatsApp Business offre de nouvelles possibilités d'automatisation et de personnalisation pour les communications client."
+        }
+      ],
+      relatedPosts: ["1", "2", "4"]
+    },
+    "4": {
+      title: "TikTok for Business : stratégies de contenu",
+      date: "9 juin 2025",
+      readTime: "7 min de lecture",
+      author: "Équipe Boostly",
+      category: "TikTok Business",
+      imageSrc: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&h=400&fit=crop",
+      content: [
         {
           type: "paragraph",
-          text: "We're proud to have contributed to the success of this event and look forward to supporting more underground electronic music events across Europe. If you're planning a similar event and require a sound system that goes beyond conventional rental options, contact us to discuss how we can help create an unforgettable sonic experience for your audience."
+          text: "Découvrez comment créer du contenu TikTok authentique qui génère de l'engagement et des conversions pour votre entreprise."
+        }
+      ],
+      relatedPosts: ["1", "2", "5"]
+    },
+    "5": {
+      title: "Google Ads : optimisations avancées pour 2024",
+      date: "8 juin 2025",
+      readTime: "9 min de lecture",
+      author: "Équipe Boostly",
+      category: "Google Ads",
+      imageSrc: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800&h=400&fit=crop",
+      content: [
+        {
+          type: "paragraph",
+          text: "Les nouvelles stratégies d'enchères automatisées et d'optimisation des campagnes Google Ads pour maximiser votre ROI."
         }
       ],
       relatedPosts: ["1", "4", "6"]
     },
-    // Placeholder for other blog posts - these would be filled in when creating those specific posts
-    "1": { 
-      title: "How to Choose the Right Sound System for Your Event",
-      date: "January 15, 2023",
-      readTime: "5 min read",
-      author: "Technical Crew",
-      category: "Sound",
-      imageSrc: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&q=80",
-      content: [],
-      relatedPosts: []
-    },
-    "4": { 
-      title: "Setting Up the Perfect Festival Sound",
-      date: "April 5, 2023",
-      readTime: "8 min read",
-      author: "Alex Thompson",
-      category: "Sound",
-      imageSrc: "https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&q=80",
-      content: [],
-      relatedPosts: []
-    },
-    "6": { 
-      title: "The Technical Rider: What Event Organizers Need to Know",
-      date: "June 30, 2023",
-      readTime: "9 min read",
-      author: "Michael Stevens",
-      category: "Technical",
-      imageSrc: "https://images.unsplash.com/photo-1608749333098-a1783ca4b4bf?auto=format&fit=crop&q=80",
-      content: [],
-      relatedPosts: []
+    "6": {
+      title: "LinkedIn Business : tendances du marketing B2B",
+      date: "7 juin 2025",
+      readTime: "6 min de lecture",
+      author: "Équipe Boostly",
+      category: "LinkedIn Business",
+      imageSrc: "https://images.unsplash.com/photo-1586282391129-76a6df230234?w=800&h=400&fit=crop",
+      content: [
+        {
+          type: "paragraph",
+          text: "Les dernières tendances du marketing B2B sur LinkedIn et comment optimiser votre présence professionnelle."
+        }
+      ],
+      relatedPosts: ["1", "3", "5"]
     }
   };
   
@@ -136,9 +137,9 @@ const BlogDetail = () => {
   if (!post) {
     return (
       <div className="pt-32 pb-16 px-6 md:px-12 text-center">
-        <h1 className="text-2xl font-bold text-white mb-4">Blog post not found</h1>
-        <Link to="/blog" className="text-psyco-green-DEFAULT hover:text-psyco-green-light">
-          Return to blog
+        <h1 className="text-2xl font-bold text-white mb-4">Article non trouvé</h1>
+        <Link to="/blog" className="text-boostly-blue hover:text-blue-400">
+          Retour au blog
         </Link>
       </div>
     );
@@ -150,10 +151,10 @@ const BlogDetail = () => {
       <div className="max-w-4xl mx-auto px-6 md:px-12 mb-8">
         <Link 
           to="/blog" 
-          className="inline-flex items-center text-psyco-green-DEFAULT hover:text-psyco-green-light transition-colors"
+          className="inline-flex items-center text-boostly-blue hover:text-blue-400 transition-colors"
         >
           <ArrowLeft className="mr-2 h-4 w-4" />
-          Back to all articles
+          Retour aux articles
         </Link>
       </div>
       
@@ -161,7 +162,7 @@ const BlogDetail = () => {
       <article className="max-w-4xl mx-auto px-6 md:px-12">
         <header className="mb-8">
           <div className="mb-4">
-            <span className="bg-psyco-green-DEFAULT px-3 py-1 text-xs font-medium text-white rounded-full">
+            <span className="bg-boostly-blue px-3 py-1 text-xs font-medium text-white rounded-full">
               {post.category}
             </span>
           </div>
@@ -199,7 +200,7 @@ const BlogDetail = () => {
         <div className="prose prose-invert max-w-none">
           {post.content.map((section, index) => {
             if (section.type === "paragraph") {
-              return <p key={index} className="text-gray-300 mb-6">{section.text}</p>;
+              return <p key={index} className="text-gray-300 mb-6 leading-relaxed">{section.text}</p>;
             } else if (section.type === "heading") {
               return <h2 key={index} className="text-2xl font-bold text-white mt-10 mb-4">{section.text}</h2>;
             } else if (section.type === "list") {
@@ -212,7 +213,7 @@ const BlogDetail = () => {
               );
             } else if (section.type === "quote") {
               return (
-                <blockquote key={index} className="border-l-4 border-psyco-green-DEFAULT pl-4 italic my-6">
+                <blockquote key={index} className="border-l-4 border-boostly-blue pl-4 italic my-6">
                   <p className="text-gray-300 mb-2">"{section.text}"</p>
                   {section.author && (
                     <footer className="text-sm text-gray-400">— {section.author}</footer>
@@ -227,9 +228,9 @@ const BlogDetail = () => {
         {/* Share buttons */}
         <div className="mt-12 pt-6 border-t border-gray-800">
           <div className="flex items-center">
-            <span className="text-gray-400 mr-4">Share this article:</span>
+            <span className="text-gray-400 mr-4">Partager cet article :</span>
             <div className="flex space-x-3">
-              <button className="text-gray-400 hover:text-psyco-green-DEFAULT transition-colors">
+              <button className="text-gray-400 hover:text-boostly-blue transition-colors">
                 <Share2 size={18} />
               </button>
             </div>
@@ -239,7 +240,7 @@ const BlogDetail = () => {
         {/* Related posts */}
         {post.relatedPosts && post.relatedPosts.length > 0 && (
           <div className="mt-16">
-            <h3 className="text-xl font-bold text-white mb-6">Related Articles</h3>
+            <h3 className="text-xl font-bold text-white mb-6">Articles Connexes</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {post.relatedPosts.map((relatedId) => {
                 const relatedPost = getBlogPostById(relatedId);
@@ -249,7 +250,7 @@ const BlogDetail = () => {
                   <div key={relatedId} className="glassmorphism overflow-hidden card-hover">
                     <Link to={`/blog/${relatedId}`} className="block">
                       <div className="p-6">
-                        <h4 className="text-lg font-medium text-white mb-2 hover:text-psyco-green-light transition-colors">
+                        <h4 className="text-lg font-medium text-white mb-2 hover:text-boostly-blue transition-colors">
                           {relatedPost.title}
                         </h4>
                       </div>
