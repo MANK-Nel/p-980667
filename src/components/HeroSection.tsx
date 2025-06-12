@@ -4,8 +4,8 @@ import { MoveRight, Sparkles } from 'lucide-react';
 
 const HeroSection = () => {
   return (
-    <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900">
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
+    <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 pt-20">
+      <div className="container mx-auto px-4 md:px-6 relative z-10 py-12 md:py-20">
         <div className="flex flex-col items-center text-center">
           <div className="max-w-6xl">
             {/* Premium Badge */}

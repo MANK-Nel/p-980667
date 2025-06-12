@@ -64,7 +64,7 @@ const Navbar = () => {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-900/95 backdrop-blur-md border-b border-gray-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
           <div className="flex items-center justify-between h-20">
-            <Link to="/" className="flex items-center space-x-2 z-60">
+            <Link to="/" className="flex items-center space-x-2 z-60 mr-8 md:mr-16">
               <LogoComponent />
             </Link>
 
